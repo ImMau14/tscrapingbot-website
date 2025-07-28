@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "@fontsource-variable/montserrat";
+@import "@fontsource-variable/inter";
+
+.font-heading { font-family: "Montserrat Variable", sans-sefif; }
+.font-body { font-family: "Inter Variable", sans-sefif; }
+
+:root {
+	--soft-white: 222 230 255;
+
+	--dark-purple: 10 2 23;
+	--darkness-1-purple: 5 1 11;
+	--darkness-2-purple: 2 0.5 5;
+
+	--neon-blue: 20 86 157;
+	--neon-green: 10 198 107;
+	--neon-purple: 64 24 146;
+}

@@ -1,0 +1,21 @@
+---
+import '@styles/global.css'
+import { NavBar } from '@components/tsx/NavBar/NavBar.tsx'
+import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
+---
+
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="viewport" content="width=device-width" />
+		<meta name="generator" content={Astro.generator} />
+		<title>TScrapingBot - ImMau14</title>
+	</head>
+	<body class="bg-[rgb(var(--darkness-1-purple))] w-full h-full overflow-hidden">
+		<div class="w-full h-full relative">
+			<NavBar client:visible />
+		</div>
+		<BgWebImage client:visible />
+	</body>
+</html>
