@@ -7,8 +7,8 @@ export const BgWebImage = () => {
       src={ webImg.src }
       alt="Spider Web Image"
       initial={{ opacity: 0 }}
-      animate={{ opacity: 0.1 }}
-      transition={{ duration: 2, ease: 'easeOut' }}
+      animate={{ opacity: 0.05 }}
+      transition={{ duration: 1, ease: 'easeOut' }}
       draggable="false"
       className={`
         fixed top-0 left-0

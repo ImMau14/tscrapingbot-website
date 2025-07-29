@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { TSLogoSvg } from './components/TSLogoSvg.tsx'
+import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
 import { Links } from './components/Links.tsx'
 
 const pages = [
@@ -18,7 +18,7 @@ export const NavBar = () => {
       transition={{ duration: 1, ease: 'easeOut' }}
       className="
         bg-transparent
-        h-12 md:h-16 md:p-8 p-4
+        max-h-12 md:max-h-16 md:p-8 p-4
         flex items-center justify-between
       "
     >
@@ -28,8 +28,13 @@ export const NavBar = () => {
         no-underline
         flex items-center
       ">
-        <TSLogoSvg />
-        <h1>TScrapingBot</h1>
+        <TSLogoSvg
+          className="
+            h-6 md:h-8 mr-4
+            fill-silver-450
+          "
+        />
+        <h2>TScrapingBot</h2>
       </a>
 
       <Links pages={ pages } />

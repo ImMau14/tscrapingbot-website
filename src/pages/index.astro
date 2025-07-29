@@ -3,20 +3,22 @@ import '@styles/global.css'
 import '@styles/fonts.css'
 import { NavBar } from '@components/tsx/NavBar/NavBar.tsx'
 import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
+import { HomePage } from '@components/tsx/HomePage/HomePage.tsx'
 ---
 
-<html lang="en">
+<html lang="es" class="h-full w-full">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>TScrapingBot - ImMau14</title>
+		<title>TScrapingBot</title>
 	</head>
 	<body class="bg-purple-950 w-full h-full overflow-hidden">
-		<div class="w-full h-full relative">
+		<div class="w-full h-full relative grid grid-cols-1 grid-rows-[auto_1fr]">
 			<NavBar client:only="react" />
+			<HomePage client:load className="px-4 md:px-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center" />
 		</div>
-		<BgWebImage client:visible />
+		<BgWebImage client:load />
 	</body>
 </html>

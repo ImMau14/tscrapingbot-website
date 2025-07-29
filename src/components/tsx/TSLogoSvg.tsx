@@ -1,4 +1,4 @@
-export const TSLogoSvg = () => {
+export const TSLogoSvg = ({className = ''}: string) => {
   return (
     <svg
       viewBox="0 0 341.92657 332.31229"
@@ -7,10 +7,7 @@ export const TSLogoSvg = () => {
       xmlSpace="preserve"
       xmlns="http://www.w3.org/2000/svg"
       xmlnssvg="http://www.w3.org/2000/svg"
-      className={`
-        h-6 md:h-8 mr-4
-        fill-silver-450
-      `}
+      className={ className }
     >
       <defs id="defs1" />
       <g

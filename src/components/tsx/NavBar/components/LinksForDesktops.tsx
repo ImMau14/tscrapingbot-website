@@ -15,14 +15,15 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
           {pages.map((page, index) => (
             <motion.li 
               key={ index } 
-              transition={{ type: 'spring', stiffness: 250, damping: 25 }}
+              transition={{ type: 'spring', stiffness: 500, damping: 25 }}
               whileHover={{ scale: 1.06 }}
               initial={ false }
             >
               <a 
                 href={ page.href } 
                 className="
-                  text-silver-450 hover:text-white duration-200 font-body text-sm 
+                  text-silver-450 hover:text-white duration-200
+                  font-body text-sm 
                   relative
                 "
                 onMouseEnter={ () => setHoveredIndex(index) }
