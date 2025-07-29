@@ -2,7 +2,7 @@
 import '@styles/global.css'
 ---
 
-<html lang="en">
+<html lang="es" class="w-full h-full">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -10,7 +10,14 @@ import '@styles/global.css'
     <meta name="generator" content={Astro.generator} />
     <title>Caracteristicas - TScrapingBot</title>
   </head>
-  <body class="bg-black flex  justify-center h-full w-full">
-      <h1 class="text-red-500 text-7xl font-bold">Pagina en proceso...</h1>
+  <body class="bg-black flex flex-col items-center justify-center h-full w-full">
+      <main class="flex flex-col gap-10 p-40">
+        <h1 class="text-green-300 text-7xl font-bold text-heading tracking-wide">
+          <span class="text-purple-250">404</span> Página en proceso
+        </h1>
+        <p class="ml-5 text-green-300 text-2xl text-body w-1/2 tracking-wide">
+          Si está viendo esto, es porque el compilador ya no compila, el programa no programa, los estilos no se estilan y la función ya no funciona...
+        </p>
+      </main>
   </body>
 </html>

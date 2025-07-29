@@ -40,8 +40,8 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
         transition={{ duration: 0.3, ease: 'easeInOut' }}
         className="px-4 py-2 font-body text-sm rounded-md"
         style={{
-          backgroundColor: 'rgb(var(--neon-green))',
-          color: 'rgb(222, 230, 255)'
+          backgroundColor: '#23cc7a',
+          color: '#eff3ff'
         }}
       >
         ...
@@ -61,7 +61,7 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
               right-0
               shadow-lg rounded-md overflow-hidden
             `}
-            style={{ backgroundColor: 'rgb(var(--darkness-2-purple))' }}
+            style={{ backgroundColor: 'black' }}
           >
             {pages.map((page, idx) => (
               <motion.li
@@ -75,7 +75,7 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
                   href={page.href}
                   onClick={() => setIsOpen(false)}
                   className="block px-4 py-2 text-sm font-body"
-                  style={{ color: 'rgb(222, 230, 255)' }}
+                  style={{ color: '#eff3ff' }}
                 >
                   {page.name}
                 </a>

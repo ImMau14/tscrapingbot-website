@@ -9,7 +9,7 @@ export const TSLogo = () => {
       xmlnssvg="http://www.w3.org/2000/svg"
       className={`
         h-8 mr-4
-        fill-silver-1
+        fill-silver-450
       `}
     >
       <defs id="defs1" />

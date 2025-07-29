@@ -18,12 +18,12 @@ export const NavBar = () => {
       transition={{ duration: 1, ease: 'easeOut' }}
       className={`
         bg-transparent
-        h-16 p-8
+        h-16 md:p-8 p-4
         flex items-center justify-between
       `}
     >
       <a href="/" className={`
-        text-silver-1
+        text-silver-450
         font-heading text-xl font-bold
         no-underline
         flex items-center

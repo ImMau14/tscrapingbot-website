@@ -22,7 +22,7 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
               <a 
                 href={ page.href } 
                 className={`
-                  text-silver-1 font-body text-sm 
+                  text-silver-450 font-body text-sm 
                   relative
                 `}
                 onMouseEnter={ () => setHoveredIndex(index) }
@@ -34,7 +34,7 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
                     <motion.div 
                       layoutId='hoverLine'
                       className={`
-                        bg-green-1
+                        bg-green-450
                         absolute -bottom-2 left-0
                         rounded-full w-full h-0.5
                       `}
