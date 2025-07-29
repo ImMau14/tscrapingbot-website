@@ -1,4 +1,4 @@
-export const TSLogo = () => {
+export const TSLogoSvg = () => {
   return (
     <svg
       viewBox="0 0 341.92657 332.31229"
@@ -8,7 +8,7 @@ export const TSLogo = () => {
       xmlns="http://www.w3.org/2000/svg"
       xmlnssvg="http://www.w3.org/2000/svg"
       className={`
-        h-8 mr-4
+        h-6 md:h-8 mr-4
         fill-silver-450
       `}
     >

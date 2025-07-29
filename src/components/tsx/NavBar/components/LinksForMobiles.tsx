@@ -1,5 +1,6 @@
 import { motion, AnimatePresence } from 'framer-motion'
 import { useState, useRef } from 'react'
+import { MenuButtonSvg } from './MenuButtonSvg.tsx'
 
 interface Page { 
   name: string
@@ -38,13 +39,13 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
         initial={ false }
         whileHover={{ scale: 1.03 }}
         transition={{ duration: 0.3, ease: 'easeInOut' }}
-        className="px-4 py-2 font-body text-sm rounded-md"
+        className=""
         style={{
-          backgroundColor: '#23cc7a',
+          backgroundColor: 'transparent',
           color: '#eff3ff'
         }}
       >
-        ...
+      <MenuButtonSvg />
       </motion.button>
 
       <AnimatePresence>
@@ -56,11 +57,11 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
             exit="hidden"
             variants={ listVariants }
             transition={{ type: 'spring', stiffness: 250, damping: 25 }}
-            className={`
+            className="
               absolute mt-2 w-40 
               right-0
               shadow-lg rounded-md overflow-hidden
-            `}
+            "
             style={{ backgroundColor: 'black' }}
           >
             {pages.map((page, idx) => (
@@ -74,8 +75,11 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
                 <a
                   href={page.href}
                   onClick={() => setIsOpen(false)}
-                  className="block px-4 py-2 text-sm font-body"
-                  style={{ color: '#eff3ff' }}
+                  className="
+                    block px-4 py-2
+                    text-sm font-body 
+                    text-silver-450 hover:text-silver-50
+                  "
                 >
                   {page.name}
                 </a>

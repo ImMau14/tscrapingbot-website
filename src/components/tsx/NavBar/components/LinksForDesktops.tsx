@@ -21,10 +21,10 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
             >
               <a 
                 href={ page.href } 
-                className={`
-                  text-silver-450 font-body text-sm 
+                className="
+                  text-silver-450 hover:text-white duration-200 font-body text-sm 
                   relative
-                `}
+                "
                 onMouseEnter={ () => setHoveredIndex(index) }
                 onMouseLeave={ () => setHoveredIndex(null) }
               >
@@ -33,11 +33,11 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
                   <AnimatePresence>
                     <motion.div 
                       layoutId='hoverLine'
-                      className={`
+                      className="
                         bg-green-450
                         absolute -bottom-2 left-0
                         rounded-full w-full h-0.5
-                      `}
+                      "
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}

@@ -4,11 +4,11 @@ import { useMediaQuery } from 'react-responsive'
 
 interface Page { 
   name: string
-  href: string 
+  href: string
 }
 
 export const Links = ({ pages }: Page[]) => {
-  const isMobile = useMediaQuery({ maxWidth: 740 })
+  const isMobile = useMediaQuery({ maxWidth: 768 })
   if (isMobile) return ( <LinksForMobiles pages={ pages } /> )
   else return ( <LinksForDesktops pages={ pages } /> )
 }
