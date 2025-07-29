@@ -1,13 +1,16 @@
-export const TSLogo = ({ className } : string) => {
+export const TSLogo = () => {
   return (
     <svg
-      className={ className }
       viewBox="0 0 341.92657 332.31229"
       version="1.1"
       id="svg1"
       xmlSpace="preserve"
       xmlns="http://www.w3.org/2000/svg"
-      xmlnsSvg="http://www.w3.org/2000/svg"
+      xmlnssvg="http://www.w3.org/2000/svg"
+      className={`
+        h-8 mr-4
+        fill-silver-1
+      `}
     >
       <defs id="defs1" />
       <g

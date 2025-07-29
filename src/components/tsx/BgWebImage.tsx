@@ -14,7 +14,7 @@ export const BgWebImage = () => {
         fixed top-0 left-0
         h-full w-full object-cover
         xl:w-full xl:h-full xl:object-cover
-        -z-1
+        z-[-1]
       `}
     />
   )

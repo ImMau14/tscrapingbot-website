@@ -6,22 +6,23 @@ interface Page {
   href: string
 }
 
-interface LinksForDesktopsProps {
-  pages: Page[]
-}
-
-export const LinksForDesktops = ({ pages }: LinksForDesktopsProps) => {
+export const LinksForDesktops = ({ pages }: Page[]) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   return(
     <>
       <LayoutGroup>
         <ul className="flex space-x-4 gap-8">
           {pages.map((page, index) => (
-            <li key={ index }>
+            <motion.li 
+              key={ index } 
+              transition={{ type: 'spring', stiffness: 250, damping: 25 }}
+              whileHover={{ scale: 1.06 }}
+              initial={ false }
+            >
               <a 
                 href={ page.href } 
                 className={`
-                  text-[rgb(var(--soft-white))] font-body text-sm 
+                  text-silver-1 font-body text-sm 
                   relative
                 `}
                 onMouseEnter={ () => setHoveredIndex(index) }
@@ -33,7 +34,7 @@ export const LinksForDesktops = ({ pages }: LinksForDesktopsProps) => {
                     <motion.div 
                       layoutId='hoverLine'
                       className={`
-                        bg-[rgb(var(--neon-green))]
+                        bg-green-1
                         absolute -bottom-2 left-0
                         rounded-full w-full h-0.5
                       `}
@@ -49,7 +50,7 @@ export const LinksForDesktops = ({ pages }: LinksForDesktopsProps) => {
                   </AnimatePresence>
                 )}
               </a>
-            </li>
+            </motion.li>
           ))}
         </ul>
       </LayoutGroup>

@@ -1,18 +1,18 @@
 // @ts-check
 import { defineConfig } from 'astro/config'
 
-import react from '@astrojs/react';
-import tailwindcss from '@tailwindcss/vite'
+import react from '@astrojs/react'
+import tailwind from '@astrojs/tailwind'
 
 // For alias imports
 import { fileURLToPath, URL } from 'node:url'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [react()],
+  integrations: [react(), tailwind()],
 
   vite: {
-    plugins: [tailwindcss()],
+    plugins: [],
     resolve: {
       alias: {
         "@styles": fileURLToPath(new URL('./src/styles', import.meta.url)),

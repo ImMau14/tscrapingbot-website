@@ -1,6 +1,5 @@
 ---
 import '@styles/global.css'
-import '@styles/fonts.css'
 import { NavBar } from '@components/tsx/NavBar/NavBar.tsx'
 import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
 ---
@@ -13,7 +12,7 @@ import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
 		<meta name="generator" content={Astro.generator} />
 		<title>TScrapingBot - ImMau14</title>
 	</head>
-	<body class="bg-purple-2 w-full h-full overflow-hidden">
+	<body class="bg-[rgb(var(--darkness-1-purple))] w-full h-full overflow-hidden">
 		<div class="w-full h-full relative">
 			<NavBar client:only="react" />
 		</div>
