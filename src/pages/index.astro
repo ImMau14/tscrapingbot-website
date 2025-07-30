@@ -6,18 +6,19 @@ import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
 import { HomePage } from '@components/tsx/HomePage/HomePage.tsx'
 ---
 
-<html lang="es" class="h-full w-full">
+<html lang="es" class="h-full w-full bg-purple-950">
 	<head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/webp" href="/favicon.webp" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
+		<meta name="theme-color" content="#06020f" />
 		<title>TScrapingBot</title>
 	</head>
-	<body class="bg-purple-950 w-full h-full overflow-hidden">
+	<body class="w-full h-full overflow-hidden">
 		<div class="w-full h-full relative grid grid-cols-1 grid-rows-[auto_1fr]">
 			<NavBar client:only="react" />
-			<HomePage client:load className="px-8 md:px-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center" />
+			<HomePage client:load className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center" />
 		</div>
 		<BgWebImage client:load />
 	</body>
