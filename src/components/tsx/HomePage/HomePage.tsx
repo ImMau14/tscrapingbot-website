@@ -1,6 +1,11 @@
 import { motion } from 'framer-motion'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
 
+const pageLinks = {
+  GitHub: 'https://github.com/ImMau14/tscrapingbot-website',
+  Telegram: 'https://t.me/TScrapingBot'
+}
+
 // TODO: Add multilingual support.
 export const HomePage = ({className}: string) => {
   return (
@@ -42,35 +47,39 @@ export const HomePage = ({className}: string) => {
         transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
         className="text-white flex gap-4 justify-center"
       >
-        <motion.button
-          className="
-            flex items-center justify-center text-sm font-body py-1 px-4 
-            hover:bg-purple-850 duration-200
-            bg-purple-950 border-2 
-            border-purple-300/50
-            rounded-full
-          "
-          initial={false}
-          transition={{ type: 'spring', stiffness: 900, damping: 25 }}
-          whileHover={{ scale: 1.06 }}
-        >
-          Ver en GitHub
-        </motion.button>
-
-        <motion.button 
-          className="
-            flex items-center justify-center text-sm font-body py-1 px-4  
-            hover:bg-green-850 duration-200
-            bg-purple-950 border-2 
-            border-green-300/50 
-            rounded-full
-          "
-          initial={false}
-          transition={{ type: 'spring', stiffness: 900, damping: 25 }}
-          whileHover={{ scale: 1.06 }}
-        >
-          Probar en Telegram
-        </motion.button>
+        <a href={ pageLinks.GitHub } >
+          <motion.button
+            className="
+              flex items-center justify-center text-sm font-body py-1 px-4 
+              hover:bg-purple-850 duration-200
+              bg-purple-950 border-2 
+              border-purple-300/50
+              rounded-full
+            "
+            initial={false}
+            transition={{ type: 'spring', stiffness: 900, damping: 25 }}
+            whileHover={{ scale: 1.06 }}
+          >
+            Ver en GitHub
+          </motion.button>
+        </a>
+        
+        <a href={ pageLinks.Telegram } >
+          <motion.button 
+            className="
+              flex items-center justify-center text-sm font-body py-1 px-4  
+              hover:bg-green-850 duration-200
+              bg-purple-950 border-2 
+              border-green-300/50 
+              rounded-full
+            "
+            initial={false}
+            transition={{ type: 'spring', stiffness: 900, damping: 25 }}
+            whileHover={{ scale: 1.06 }}
+          >
+            Probar en Telegram
+          </motion.button>
+        </a>
       </motion.div>
     </main>
   )
