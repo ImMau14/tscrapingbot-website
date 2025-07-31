@@ -44,8 +44,9 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
           backgroundColor: 'transparent',
           color: '#eff3ff'
         }}
+        aria-label="Links"
       >
-      <MenuButtonSvg />
+        <MenuButtonSvg />
       </motion.button>
 
       <AnimatePresence>
