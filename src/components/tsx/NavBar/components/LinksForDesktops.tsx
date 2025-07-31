@@ -11,7 +11,9 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
   return(
     <>
       <LayoutGroup>
-        <ul className="flex space-x-4 gap-8">
+        <ul 
+          className="hidden md:flex space-x-4 gap-8"
+        >
           {pages.map((page, index) => (
             <motion.li 
               key={ index } 

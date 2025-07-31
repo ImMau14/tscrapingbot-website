@@ -32,7 +32,7 @@ export const LinksForMobiles = ({ pages }: Page[]) => {
   }
 
   return (
-    <div className="relative inline-block">
+    <div className="relative inline-block md:hidden">
       <motion.button
         ref={ btnRef }
         onClick={ toggleMenu }

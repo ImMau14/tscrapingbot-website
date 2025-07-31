@@ -1,8 +1,9 @@
-import { motion } from 'framer-motion'
+import { LinksForDesktops } from './components/LinksForDesktops.tsx'
+import { LinksForMobiles } from './components/LinksForMobiles.tsx'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
-import { Links } from './components/Links.tsx'
+import { motion } from 'framer-motion'
 
-interface Page {
+interface Page { 
   name: string
   href: string
 }
@@ -34,7 +35,8 @@ export const NavBar = ({ pages } : Page[]) => {
         <h2>TScrapingBot</h2>
       </a>
 
-      <Links pages={ pages } />
+      <LinksForMobiles pages={ pages } />
+      <LinksForDesktops pages={ pages } />
     </motion.nav>
   )
 }
