@@ -1,13 +1,22 @@
 import { motion } from 'framer-motion'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
 
+interface HomePageProps {
+  className: string
+  description: string
+  button: {
+    Telegram: string
+    GitHub: string
+  }
+}
+
 const pageLinks = {
   GitHub: 'https://github.com/ImMau14/tscrapingbot',
   Telegram: 'https://t.me/TScrapingBot'
 }
 
 // TODO: Add multilingual support.
-export const HomePage = ({className}: string) => {
+export const HomePage = ({ className, description, button }: HomePageProps) => {
   const offset = -3
 
   return (
@@ -40,7 +49,7 @@ export const HomePage = ({className}: string) => {
         transition={{ duration: 1, ease: 'easeOut', delay: 0.2 }}
         className="text-silver-450 font-body text-sm"
       >
-        Analiza páginas con IA desde Telegram con TScrapingBot
+        {description}
       </motion.p>
 
       <motion.div
@@ -62,7 +71,7 @@ export const HomePage = ({className}: string) => {
             transition={{ type: 'spring', stiffness: 900, damping: 25 }}
             whileHover={{ scale: 1.06 }}
           >
-            Ver en GitHub
+            {button.GitHub}
           </motion.button>
         </a>
         
@@ -79,7 +88,7 @@ export const HomePage = ({className}: string) => {
             transition={{ type: 'spring', stiffness: 900, damping: 25 }}
             whileHover={{ scale: 1.06 }}
           >
-            Probar en Telegram
+            {button.Telegram}
           </motion.button>
         </a>
       </motion.div>

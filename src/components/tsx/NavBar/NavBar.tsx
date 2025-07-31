@@ -2,15 +2,12 @@ import { motion } from 'framer-motion'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
 import { Links } from './components/Links.tsx'
 
-const pages = [
-  { name: 'Inicio', href: '/' },
-  { name: 'Características', href: '/features' },
-  { name: 'Tecnologías', href: '/stack' },
-  { name: 'Probar', href: '/try' }
-]
+interface Page {
+  name: string
+  href: string
+}
 
-// TODO: Add multilingual support.
-export const NavBar = () => {
+export const NavBar = ({ pages } : Page[]) => {
   return (
     <motion.nav
       initial={{ opacity: 0, y: -10 }}

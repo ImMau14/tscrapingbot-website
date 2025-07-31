@@ -9,7 +9,9 @@ const fallback = defaultLocale
     <meta charset="utf-8" />
     <script define:vars={{ locales, fallback }}>
       const code = navigator.language.split('-')[0];
-      window.location.replace(`/${locales.includes(code) ? code : fallback}`);
+      window.location.replace(`/${locales.includes(code) ? code : fallback}/use`);
     </script>
   </head>
+  <body></body>
 </html>
+

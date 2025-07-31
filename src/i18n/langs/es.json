@@ -1,0 +1,22 @@
+{
+  "lang": "es",
+  "NavBar": [
+    { "name": "Inicio", "href": "/es" },
+    { "name": "Características", "href": "/es/features" },
+    { "name": "Tecnologías", "href": "/es/stack" },
+    { "name": "Usar Ahora", "href": "/es/use" }
+  ],
+  "home": {
+    "title": "Inicio",
+    "description": "Analiza páginas con IA desde Telegram con TScrapingBot",
+    "button": {
+      "GitHub": "Ver en GitHub",
+      "Telegram": "Ver en Telegram"
+    }
+  },
+  "inProcess": {
+    "title": "Página en desarrollo...",
+    "header": "¡Lo siento, esta página está en progreso!",
+    "description": "Si está viendo esto, es porque el compilador ya no compila, los estilos no se estilan y la función ya no funciona"
+  }
+}

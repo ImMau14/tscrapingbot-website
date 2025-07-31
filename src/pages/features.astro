@@ -1,24 +1,17 @@
 ---
-import '@styles/global.css'
+import { locales, defaultLocale } from '@i18n/utils.ts'
+const localesJSON = JSON.stringify(locales)
+const fallback = defaultLocale
 ---
-
-<html lang="es" class="w-full h-full">
+<!DOCTYPE html>
+<html lang={fallback}>
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#000" />
-    <title>Caracteristicas - TScrapingBot</title>
+    <script define:vars={{ locales, fallback }}>
+      const code = navigator.language.split('-')[0];
+      window.location.replace(`/${locales.includes(code) ? code : fallback}/features`);
+    </script>
   </head>
-  <body class="bg-black flex flex-col items-center justify-center h-full w-full">
-      <main class="flex flex-col gap-10 p-40">
-        <h1 class="text-green-300 text-7xl font-bold text-heading tracking-wide">
-          <span class="text-purple-250">404</span> Página en proceso
-        </h1>
-        <p class="ml-5 text-green-300 text-2xl text-body w-1/2 tracking-wide">
-          Si está viendo esto, es porque el compilador ya no compila, el programa no programa, los estilos no se estilan y la función ya no funciona...
-        </p>
-      </main>
-  </body>
+  <body></body>
 </html>
+
