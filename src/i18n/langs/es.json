@@ -18,5 +18,26 @@
     "title": "Página en desarrollo...",
     "header": "¡Lo siento, esta página está en progreso!",
     "description": "Si está viendo esto, es porque el compilador ya no compila, los estilos no se estilan y la función ya no funciona"
+  },
+  "features": {
+    "title": "Características",
+    "featuresList": {
+      "textGeneration": {
+        "title": "Generación de Texto y Respuestas",
+        "content": "Capacidad para generar respuestas de texto y mantener conversaciones fluidas, inpulsado por la inteligencia artificial de Gemini 2.5."
+      },
+      "webAnalytics": {
+        "title": "Análisis de Contenido Web",
+        "content": "Procesamiento y análisis de contenido de URL's. Permite la extracción de resúmenes, la búsqueda de información específica y la respuesta a preguntas basadas en el contenido web."
+      },
+      "thinkingMode": {
+        "title": "Modo de Razonamiento",
+        "content": "Integración de un modo de razonamiento para un procesamiento de información más profundo, resultando en respuestas elaboradas y contextualizadas."
+      },
+      "memory": {
+        "title": "Memoria Convencional",
+        "content": "Persistencia del contexto en chats, facilitando la coherencia en las interacciones y la comprensión de solicitudes a lo largo del tiempo."
+      }
+    }
   }
 }

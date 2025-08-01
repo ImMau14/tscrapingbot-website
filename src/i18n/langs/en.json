@@ -18,5 +18,26 @@
     "title": "In development...",
     "header": "Sorry, this page is a work in progress!",
     "description": "If you are seeing this, it is because the compiler no longer compiles, the styles are not styled, and the object has no objective"
+  },
+  "features": {
+    "title": "Features",
+    "featuresList": {
+      "textGeneration": {
+        "title": "Text and Response Generation",
+        "content": "Ability to generate text responses and maintain fluid conversations, powered by Gemini 2.5's artificial intelligence."
+      },
+      "webAnalytics": {
+        "title": "Web Content Analysis",
+        "content": "Processing and analyzing URL content. Allows extracting summaries, searching for specific information, and answering questions based on web content."
+      },
+      "thinkingMode": {
+        "title": "Reasoning Mode",
+        "content": "Integration of a reasoning mode for deeper information processing, resulting in elaborate and contextualized responses."
+      },
+      "memory": {
+        "title": "Conventional Memory",
+        "content": "Context persistence in chats, facilitating consistency in interactions and understanding requests over time."
+      }
+    }
   }
 }
