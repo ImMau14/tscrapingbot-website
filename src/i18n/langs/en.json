@@ -21,6 +21,7 @@
   },
   "features": {
     "title": "Features",
+    "metaContent": "From text and response generation, to web content and image analysis.",
     "featuresList": {
       "textGeneration": {
         "title": "Text and Response Generation",

@@ -15,7 +15,6 @@ const pageLinks = {
   Telegram: 'https://t.me/TScrapingBot'
 }
 
-// TODO: Add multilingual support.
 export const HomePage = ({ className, description, button }: HomePageProps) => {
   const offset = -3
 
@@ -29,17 +28,22 @@ export const HomePage = ({ className, description, button }: HomePageProps) => {
       >
         <TSLogoSvg className="fill-silver-300 h-20" />
         <h1 className="
-          flex items-center pr-0 md:pr-4 relative 
-          text-[2.8rem] md:text-5xl font-heading font-bold text-silver-300 
+          flex items-center pr-0 md:pr-4 relative
+          text-[2.8rem] md:text-5xl font-heading font-bold
+          bg-gradient-to-b from-silver-150 via-silver-150 to-silver-550 bg-clip-text text-transparent
           after:content-[''] after:absolute 
-          after:-bottom-0 md:after:-bottom-3 after:right-1 md:after:right-5
+          after:-bottom-0 md:after:-bottom-3 after:right-1 md:after:right-5 after:z-1
           after:h-0.5 after:w-32 after:rounded-full 
           after:bg-green-450
           before:content-['ImMau14'] before:absolute 
           before:-bottom-2 md:before:-bottom-4 before:left-2
           before:text-sm
+          before:bg-gradient-to-b before:from-silver-150 before:via-silver-150 before:to-silver-550 
+          before:bg-clip-text before:text-transparent
+          leading-[1.25] pb-1 
         ">
-          TScraping<span className="text-green-450">Bot</span>
+          TScraping<span 
+            className="bg-gradient-to-b from-green-450 via-green-450 to-green-750 bg-clip-text text-transparent">Bot</span>
         </h1>
       </motion.header>
 

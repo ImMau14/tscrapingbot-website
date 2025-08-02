@@ -21,10 +21,11 @@
   },
   "features": {
     "title": "Características",
+    "metaContent": "Desde generación de texto y respuestas, hasta análisis de contenido web e imágenes.",
     "featuresList": {
       "textGeneration": {
         "title": "Generación de Texto y Respuestas",
-        "content": "Capacidad para generar respuestas de texto y mantener conversaciones fluidas, inpulsado por la inteligencia artificial de Gemini 2.5."
+        "content": "Capacidad para generar respuestas de texto y mantener conversaciones fluídas, impulsado por la inteligencia artificial de Gemini 2.5."
       },
       "webAnalytics": {
         "title": "Análisis de Contenido Web",

@@ -36,6 +36,6 @@ const t = await getTranslations(lang)
 			<NavBar pages={t.NavBar} client:load />
 			<HomePage client:load className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center" description={t.home.description} button={t.home.button} />
 		</div>
-		<BgWebImage client:load />
+		<BgWebImage client:visible />
 	</body>
 </html>

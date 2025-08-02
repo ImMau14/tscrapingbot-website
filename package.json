@@ -19,7 +19,8 @@
     "framer-motion": "^12.23.9",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
-    "react-responsive": "^10.0.1"
+    "react-responsive": "^10.0.1",
+    "tailwind-scrollbar": "^4.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.21",

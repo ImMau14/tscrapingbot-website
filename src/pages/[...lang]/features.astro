@@ -1,7 +1,11 @@
 ---
 import '@styles/global.css'
+import '@styles/fonts.css'
 
 import { locales, getTranslations } from '@i18n/utils.ts'
+import { NavBar } from '@components/tsx/NavBar/NavBar.tsx'
+import { FeaturesPage } from '@components/tsx/FeaturesPage/FeaturesPage.tsx'
+import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
 
 export async function getStaticPaths() {
 	const languages = locales
@@ -15,23 +19,21 @@ const { lang } = Astro.params
 const t = await getTranslations(lang)
 ---
 
-<html lang={lang} class="w-full h-full">
+<html lang={lang} class="w-full h-full bg-purple-950">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/webp" href="/favicon.webp" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#000" />
-    <title>{ t.inProcess.title }</title>
+    <meta name="theme-color" content="#06020f" />
+    <meta name="description" content={t.features.metaContent} />
+    <title>{ t.features.title } - TScrapingBot</title>
   </head>
-  <body class="bg-black flex p-4 flex-col items-center justify-center h-full w-full">
-      <main class="flex flex-col gap-2 justify-center">
-        <h1 class="text-purple-200 text-4xl font-bold text-heading tracking-wide">
-          { t.inProcess.header }
-        </h1>
-        <p class="text-green-300 text-md text-body tracking-wide">
-          { t.inProcess.description }
-        </p>
-      </main>
+  <body class="w-full flex flex-col relative scrollbar-thin scrollbar-thumb-purple-450/40 scrollbar-track-purple-800">
+    <div class="w-full flex flex-col">
+      <NavBar pages={t.NavBar} client:load />
+      <FeaturesPage className="p-4 my-20 md:my-10" featuresList={t.features.featuresList} title={t.features.title} client:load />
+    </div>
+    <BgWebImage client:visible />
   </body>
 </html>
