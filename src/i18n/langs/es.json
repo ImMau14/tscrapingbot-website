@@ -40,5 +40,41 @@
         "content": "Persistencia del contexto en chats, facilitando la coherencia en las interacciones y la comprensión de solicitudes a lo largo del tiempo."
       }
     }
+  },
+  "stack": {
+    "title": "Tecnologías",
+    "metaContent": "TScrapingBot funciona con distintas tecnologías, pero principalmente está hecho en Python.",
+    "description1": "TScrapingBot funciona con distintas tecnologías, pero principalmente está hecho en Python.",
+    "description2": "Estas tecnologías podrían cambiar en un futuro para hacer al bot más eficiente.",
+    "stackList": [
+      {
+        "name": "Python",
+        "icon": "https://img.shields.io/badge/Python-001f2d?style=for-the-badge&logo=python"
+      },
+      {
+        "name": "Telegram",
+        "icon": "https://img.shields.io/badge/Telegram-041453?style=for-the-badge&logo=telegram&logoColor=046dac"
+      },
+      {
+        "name": "Flask",
+        "icon": "https://img.shields.io/badge/Flask-010101?style=for-the-badge&logo=flask"
+      },
+      {
+        "name": "Gemini",
+        "icon": "https://img.shields.io/badge/Gemini-00436b?style=for-the-badge&logo=googlegemini&logoColor=white"
+      },
+      {
+        "name": "PostgreSQL",
+        "icon": "https://img.shields.io/badge/PostgreSQL-27273e?style=for-the-badge&logo=postgresql"
+      },
+      {
+        "name": "Requests",
+        "icon": "https://img.shields.io/badge/Requests-white?style=for-the-badge&logo=python&logoColor=black"
+      },
+      {
+        "name": "Beautiful Soup",
+        "icon": "https://img.shields.io/badge/Beautiful%20Soup-black?style=for-the-badge&logo=python&logoColor=white"
+      }
+    ]
   }
 }

@@ -1,6 +1,5 @@
 import { motion } from 'framer-motion'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
-import image from '@assets/logo.jpg'
 
 interface FeaturesPageProps {
   className: string
