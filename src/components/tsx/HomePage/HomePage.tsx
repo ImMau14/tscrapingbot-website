@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
+import { Button } from '@components/tsx/Button.tsx'
 
 interface HomePageProps {
   className: string
@@ -62,39 +63,13 @@ export const HomePage = ({ className, description, button }: HomePageProps) => {
         transition={{ duration: 1, ease: 'easeOut', delay: 0.4 }}
         className="text-white flex gap-4 justify-center"
       >
-        <a href={ pageLinks.GitHub } >
-          <motion.button
-            className="
-              flex items-center justify-center text-[0.7rem] md:text-sm font-body py-1 px-4 
-              hover:bg-purple-850 duration-200
-              bg-purple-950 border-2 
-              border-purple-300/50
-              rounded-full
-            "
-            initial={false}
-            transition={{ type: 'spring', stiffness: 900, damping: 25 }}
-            whileHover={{ scale: 1.06 }}
-          >
-            {button.GitHub}
-          </motion.button>
-        </a>
-        
-        <a href={ pageLinks.Telegram } >
-          <motion.button 
-            className="
-              flex items-center justify-center text-[0.7rem] md:text-sm font-body py-1 px-4  
-              hover:bg-green-850 duration-200
-              bg-purple-950 border-2 
-              border-green-300/50 
-              rounded-full
-            "
-            initial={false}
-            transition={{ type: 'spring', stiffness: 900, damping: 25 }}
-            whileHover={{ scale: 1.06 }}
-          >
-            {button.Telegram}
-          </motion.button>
-        </a>
+        <a href={ pageLinks.GitHub }><Button color="purple">
+          {button.GitHub}
+        </Button></a>
+
+        <a href={ pageLinks.Telegram }><Button color="green">
+          {button.Telegram}
+        </Button></a>
       </motion.div>
     </main>
   )

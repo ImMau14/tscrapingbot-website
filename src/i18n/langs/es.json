@@ -76,5 +76,11 @@
         "icon": "https://img.shields.io/badge/Beautiful%20Soup-black?style=for-the-badge&logo=python&logoColor=white"
       }
     ]
+  },
+  "use": {
+    "title": "Usar Ahora",
+    "metaContent": "Formas de usar TScrapingBot",
+    "description": "Escanea este QR para usar en Telegram",
+    "button": "O presiona este botón"
   }
 }
