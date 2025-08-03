@@ -71,7 +71,7 @@ export const UsePage = ({ className = '', use }: UsePageProps) => {
           className="w-40 h-40 md:w-52 md:h-52"
         />
 
-        <a href="https://t.me/TScrapingBot"><Button color="green">
+        <a href="https://t.me/TScrapingBot"><Button color="blue">
           {use.button}
         </Button></a>
       </motion.div>

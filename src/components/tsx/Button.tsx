@@ -6,16 +6,29 @@ interface ButtonProps {
   color: 'green' | 'blue' | 'purple'
 }
 
-export const Button = ({ children, color } : ButtonProps) => {  
+const styles = {
+  green: {
+    border: 'border-green-300/50',
+    hover: 'hover:bg-green-850'
+  },
+  blue: {
+    border: 'border-blue-300/50',
+    hover: 'hover:bg-blue-850'
+  },
+  purple: {
+    border: 'border-purple-300/50',
+    hover: 'hover:bg-purple-850'
+  }
+}
+
+export const Button = ({ children, color }: ButtonProps) => {
+  const s = styles[color]
   return (
-    <motion.button 
+    <motion.button
       className={`
-        flex items-center justify-center text-[0.7rem] md:text-sm font-body py-1 px-4  
-        hover:bg-${color}-850 duration-150
-        bg-purple-950 border-2 
-        border-${color}-300/50 
-        rounded-lg
-        text-silver-50
+        flex items-center justify-center text-[0.7rem] md:text-sm font-body
+        py-1 px-4 rounded-lg text-silver-50 border-2
+        bg-purple-950 ${s.border} ${s.hover} duration-150
       `}
       initial={false}
       transition={{
