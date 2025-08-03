@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import QRImage from '@assets/qr.png'
+import QRImage from '@assets/qr.webp'
 import { Button } from '@components/tsx/Button.tsx'
 import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
 
