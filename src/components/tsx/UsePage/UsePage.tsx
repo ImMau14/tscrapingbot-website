@@ -55,7 +55,7 @@ export const UsePage = ({ className = '', use }: UsePageProps) => {
           {use.title}
         </h1>
 
-        <p className="text-md font-body text-silver-400 text-center px-4 md:px-10">
+        <p className="text-md font-body text-silver-450 text-center px-4 md:px-10">
           {use.description}
         </p>
       </motion.header>

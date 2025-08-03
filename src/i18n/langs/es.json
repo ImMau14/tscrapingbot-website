@@ -49,27 +49,27 @@
     "stackList": [
       {
         "name": "Python",
-        "icon": "https://img.shields.io/badge/Python-001f2d?style=for-the-badge&logo=python"
+        "icon": "https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white"
       },
       {
         "name": "Telegram",
-        "icon": "https://img.shields.io/badge/Telegram-041453?style=for-the-badge&logo=telegram&logoColor=046dac"
+        "icon": "https://img.shields.io/badge/Telegram-000000?style=for-the-badge&logo=telegram&logoColor=white"
       },
       {
         "name": "Flask",
-        "icon": "https://img.shields.io/badge/Flask-010101?style=for-the-badge&logo=flask"
+        "icon": "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
       },
       {
         "name": "Gemini",
-        "icon": "https://img.shields.io/badge/Gemini-00436b?style=for-the-badge&logo=googlegemini&logoColor=white"
+        "icon": "https://img.shields.io/badge/Gemini-000000?style=for-the-badge&logo=googlegemini&logoColor=white"
       },
       {
         "name": "PostgreSQL",
-        "icon": "https://img.shields.io/badge/PostgreSQL-27273e?style=for-the-badge&logo=postgresql"
+        "icon": "https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=white"
       },
       {
         "name": "Requests",
-        "icon": "https://img.shields.io/badge/Requests-white?style=for-the-badge&logo=python&logoColor=black"
+        "icon": "https://img.shields.io/badge/Requests-000000?style=for-the-badge&logo=python&logoColor=white"
       },
       {
         "name": "Beautiful Soup",

@@ -44,7 +44,7 @@ export const HomePage = ({ className, description, button }: HomePageProps) => {
           leading-[1.25] pb-1 
         ">
           TScraping<span 
-            className="bg-gradient-to-b from-green-450 via-green-450 to-green-750 bg-clip-text text-transparent">Bot</span>
+            className="bg-gradient-to-b from-green-450 via-green-450 to-green-700 bg-clip-text text-transparent">Bot</span>
         </h1>
       </motion.header>
 

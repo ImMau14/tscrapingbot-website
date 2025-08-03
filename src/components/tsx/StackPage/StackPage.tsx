@@ -37,10 +37,10 @@ export const StackPage = ({ className, stack }: StackPageProps) => {
         >
           {stack.title}
         </h1>
-        <p className='text-md font-body text-silver-400 text-center px-4 md:px-10'>
+        <p className='text-md font-body text-silver-450 text-center px-4 md:px-10'>
           {stack.description1}
         </p>
-        <p className='text-md font-body text-silver-400 text-center px-4 md:px-10'>
+        <p className='text-md font-body text-silver-450 text-center px-4 md:px-10'>
           {stack.description2}
         </p>
       </motion.header>
@@ -50,7 +50,8 @@ export const StackPage = ({ className, stack }: StackPageProps) => {
           <motion.img
             key={item.name}
             initial={{ opacity: 0, y: offset }}
-            whileHover={{ scale: 1.05 }}
+            whileHover={{ scale: 1.05, filter: 'brightness(1.7)' }}
+            whileTap={{ scale: 1.10 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{
@@ -59,8 +60,9 @@ export const StackPage = ({ className, stack }: StackPageProps) => {
               scale: { duration: 0.2 }
             }}
             className="
+              w-30 h-auto
               border border-2 border-blue-350
-              rounded-full
+              rounded-lg
             "
 
             alt={item.name}

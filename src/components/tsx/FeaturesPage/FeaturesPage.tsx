@@ -38,13 +38,15 @@ export const FeaturesPage = ({ className, featuresList, title }: FeaturesPagePro
           <motion.div
             key={feature.title}
             initial={{ opacity: 0, y: offset }}
-            whileHover={{ scale: 1.02 }}
+            whileHover={{ scale: 1.02, filter: 'brightness(1.7)' }}
+            whileTap={{ filter: 'brightness(2)' }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ 
               opacity: { duration: 0.8, ease: 'easeOut', delay: i * 0.2 + 0.2 },
               y: { duration: 0.8, ease: 'easeOut', delay: i * 0.2 + 0.2 },
-              scale: { duration: 0.2 }
+              scale: { duration: 0.2 },
+              filter: { duration: 0.3 }
             }}
             className="
               bg-gradient-to-b from-purple-800 via-purple-950 to-purple-950
@@ -54,7 +56,7 @@ export const FeaturesPage = ({ className, featuresList, title }: FeaturesPagePro
             "
           >
             <div className="flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold font-heading text-silver-200">
+              <h2 className="text-2xl font-semibold font-heading bg-gradient-to-b from-silver-150 via-silver-150 to-silver-550 bg-clip-text text-transparent pb-2">
                 {feature.title}
               </h2>
               <p className="text-md font-body text-silver-400 leading-loose">

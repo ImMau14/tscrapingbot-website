@@ -24,7 +24,8 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
               <a 
                 href={ page.href } 
                 className="
-                  text-silver-450 hover:text-white duration-200
+                  bg-gradient-to-b from-silver-150 via-silver-150 to-silver-450
+                  bg-clip-text text-transparent hover:text-white duration-200
                   font-body text-sm 
                   relative
                 "
