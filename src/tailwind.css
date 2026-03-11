@@ -86,6 +86,3 @@
   --color-green-900: #022815;
   --color-green-950: #01140b;
 }
-
-/* Plugin tailwind-scrollbar */
-@plugin "tailwind-scrollbar";

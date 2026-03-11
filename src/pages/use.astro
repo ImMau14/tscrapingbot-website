@@ -1,17 +1,18 @@
 ---
 import { locales, defaultLocale } from "@i18n/utils.ts"
 
-const fallback = defaultLocale
----
+const acceptLanguage = Astro.request.headers.get("accept-language")
+let userLang = defaultLocale
 
-<!doctype html>
-<html lang={fallback}>
-  <head>
-    <meta charset="utf-8" />
-    <script define:vars={{ locales, fallback }}>
-      const code = navigator.language.split("-")[0]
-      window.location.replace(`/${locales.includes(code) ? code : fallback}/use`)
-    </script>
-  </head>
-  <body></body>
-</html>
+if (acceptLanguage) {
+  const primaryLang = acceptLanguage.split(",")[0].split("-")[0]
+
+  if (locales.includes(primaryLang)) {
+    userLang = primaryLang
+  }
+}
+
+void userLang
+
+return Astro.redirect(`/${userLang}`, 302)
+---

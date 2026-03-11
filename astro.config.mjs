@@ -1,16 +1,17 @@
-// @ts-check
 import { defineConfig } from "astro/config"
 
 import react from "@astrojs/react"
+import vercel from "@astrojs/vercel"
 
-// For alias imports
+import tailwind from "@tailwindcss/vite"
+
 import { fileURLToPath, URL } from "node:url"
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [react()],
 
   vite: {
+    plugins: [tailwind()],
     resolve: {
       alias: {
         "@": fileURLToPath(new URL("./src", import.meta.url)),
@@ -21,7 +22,6 @@ export default defineConfig({
     },
   },
 
-  output: "static",
-  build: { inlineStylesheets: "auto" },
-  server: { host: true, port: 4321 },
+  output: "server",
+  adapter: vercel(),
 })
