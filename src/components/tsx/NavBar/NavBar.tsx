@@ -32,7 +32,7 @@ export const NavBar: React.FC<NavBarProps> = ({ pages }) => {
     >
       <a
         href="/"
-        className="font-heading from-silver-150 via-silver-150 to-silver-550 flex items-center bg-gradient-to-b bg-clip-text text-sm font-bold text-transparent no-underline md:text-xl"
+        className="font-heading from-silver-150 via-silver-150 to-silver-550 flex items-center bg-linear-to-b bg-clip-text text-sm font-bold text-transparent no-underline md:text-xl"
       >
         <TSLogoSvg className="fill-silver-450 mr-4 h-6 md:h-8" />
         <h2>TScrapingBot</h2>

@@ -1,12 +1,16 @@
 import { motion, LayoutGroup, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 
-interface Page {
+type Page = {
   name: string
   href: string
 }
 
-export const LinksForDesktops = ({ pages }: Page[]) => {
+interface LinksForDesktopsProps {
+  pages: Page[]
+}
+
+export const LinksForDesktops = ({ pages }: LinksForDesktopsProps) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
   return (
     <>
@@ -21,7 +25,7 @@ export const LinksForDesktops = ({ pages }: Page[]) => {
             >
               <a
                 href={page.href}
-                className="from-silver-150 via-silver-150 to-silver-450 font-body relative bg-gradient-to-b bg-clip-text text-sm text-transparent duration-200 hover:text-white"
+                className="from-silver-150 via-silver-150 to-silver-450 font-body relative bg-linear-to-b bg-clip-text text-sm text-transparent duration-200 hover:text-white"
                 onMouseEnter={() => setHoveredIndex(index)}
                 onMouseLeave={() => setHoveredIndex(null)}
               >

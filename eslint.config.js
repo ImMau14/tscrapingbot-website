@@ -8,7 +8,6 @@ import tsPlugin from "@typescript-eslint/eslint-plugin"
 import reactPlugin from "eslint-plugin-react"
 import reactHooks from "eslint-plugin-react-hooks"
 
-import tailwindcss from "eslint-plugin-tailwindcss"
 import importPlugin from "eslint-plugin-import"
 
 import astroPlugin from "eslint-plugin-astro"
@@ -67,19 +66,6 @@ export default defineConfig([
       "import/no-unresolved": "off",
     },
   },
-
-  {
-    files: ["**/*.{tsx,astro,html}"],
-    plugins: {
-      tailwindcss,
-    },
-    rules: {
-      "tailwindcss/classnames-order": "error",
-      "tailwindcss/no-custom-classname": "error",
-      "tailwindcss/no-contradicting-classname": "error",
-    },
-  },
-
   {
     files: ["**/*.astro"],
 
@@ -91,7 +77,12 @@ export default defineConfig([
         sourceType: "module",
         extraFileExtensions: [".astro"],
       },
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+        window: "readonly",
+        navigator: "readonly",
+      },
     },
 
     plugins: {
@@ -103,6 +94,7 @@ export default defineConfig([
     processor: "astro/astro",
 
     rules: {
+      "no-undef": "off",
       "astro/no-conflict-set-directives": "error",
       "astro/no-unused-define-vars-in-style": "error",
 

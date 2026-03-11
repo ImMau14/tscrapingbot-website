@@ -26,7 +26,7 @@ export const FeaturesPage = ({ className, featuresList, title }: FeaturesPagePro
         className="mb-8 flex flex-col items-center gap-2"
       >
         <TSLogoSvg className="fill-silver-300 h-16" />
-        <h1 className="from-silver-150 via-silver-150 to-silver-550 font-heading mt-2 bg-gradient-to-b bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
+        <h1 className="from-silver-150 via-silver-150 to-silver-550 font-heading mt-2 bg-linear-to-b bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
           {title}
         </h1>
       </motion.header>
@@ -46,10 +46,10 @@ export const FeaturesPage = ({ className, featuresList, title }: FeaturesPagePro
               scale: { duration: 0.2 },
               filter: { duration: 0.3 },
             }}
-            className="flex h-full w-full flex-col gap-6 rounded-lg border border-purple-300 bg-gradient-to-b from-purple-800 via-purple-950 to-purple-950 p-6"
+            className="flex h-full w-full flex-col gap-6 rounded-lg border border-purple-300 bg-linear-to-b from-purple-800 via-purple-950 to-purple-950 p-6"
           >
             <div className="flex flex-col gap-4">
-              <h2 className="font-heading from-silver-150 via-silver-150 to-silver-550 bg-gradient-to-b bg-clip-text pb-2 text-2xl font-semibold text-transparent">
+              <h2 className="font-heading from-silver-150 via-silver-150 to-silver-550 bg-linear-to-b bg-clip-text pb-2 text-2xl font-semibold text-transparent">
                 {feature.title}
               </h2>
               <p className="text-md font-body text-silver-400 leading-loose">{feature.content}</p>

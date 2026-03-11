@@ -1,23 +1,22 @@
 import { motion, AnimatePresence } from "framer-motion"
 import { useState, useRef } from "react"
+
 import { MenuButtonSvg } from "./MenuButtonSvg.tsx"
 
-interface Page {
+type Page = {
   name: string
   href: string
 }
 
-export const LinksForMobiles = ({ pages }: Page[]) => {
+interface LinksForMobilesProps {
+  pages: Page[]
+}
+
+export const LinksForMobiles = ({ pages }: LinksForMobilesProps) => {
   const [isOpen, setIsOpen] = useState(false)
-  const [alignRight, setAlignRight] = useState(false)
   const btnRef = useRef<HTMLButtonElement>(null)
 
   const toggleMenu = () => {
-    if (btnRef.current) {
-      const { right } = btnRef.current.getBoundingClientRect()
-      const spaceRight = window.innerWidth - right
-      setAlignRight(spaceRight < 150)
-    }
     setIsOpen((open) => !open)
   }
 

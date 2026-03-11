@@ -78,9 +78,9 @@ importers:
       eslint-plugin-react-hooks:
         specifier: ^7.0.1
         version: 7.0.1(eslint@10.0.3(jiti@2.6.1))
-      eslint-plugin-tailwindcss:
-        specifier: ^3.18.2
-        version: 3.18.2(tailwindcss@4.2.1)
+      globals:
+        specifier: ^17.4.0
+        version: 17.4.0
       prettier:
         specifier: ^3.8.1
         version: 3.8.1
@@ -1748,12 +1748,6 @@ packages:
     peerDependencies:
       eslint: ^3 || ^4 || ^5 || ^6 || ^7 || ^8 || ^9.7
 
-  eslint-plugin-tailwindcss@3.18.2:
-    resolution: {integrity: sha512-QbkMLDC/OkkjFQ1iz/5jkMdHfiMu/uwujUHLAJK5iwNHD8RTxVTlsUezE0toTZ6VhybNBsk+gYGPDq2agfeRNA==}
-    engines: {node: '>=18.12.0'}
-    peerDependencies:
-      tailwindcss: ^3.4.0
-
   eslint-scope@8.4.0:
     resolution: {integrity: sha512-sNXOfKCn74rt8RICKMvJS7XKV/Xk9kA7DyJr8mJik3S7Cwgy3qlkkmyS2uQB3jiJg6VNdZd/pDBJu0nvG2NlTg==}
     engines: {node: ^18.18.0 || ^20.9.0 || >=21.1.0}
@@ -1952,6 +1946,10 @@ packages:
 
   globals@16.5.0:
     resolution: {integrity: sha512-c/c15i26VrJ4IRt5Z89DnIzCGDn9EcebibhAOjw5ibqEHsE1wLUgkPn9RDmNcUKyU87GeaL633nyJ+pplFR2ZQ==}
+    engines: {node: '>=18'}
+
+  globals@17.4.0:
+    resolution: {integrity: sha512-hjrNztw/VajQwOLsMNT1cbJiH2muO3OROCHnbehc8eY5JyD2gqz4AcMHPqgaOR59DjgUjYAYLeH699g/eWi2jw==}
     engines: {node: '>=18'}
 
   globalthis@1.0.4:
@@ -5311,12 +5309,6 @@ snapshots:
       string.prototype.matchall: 4.0.12
       string.prototype.repeat: 1.0.0
 
-  eslint-plugin-tailwindcss@3.18.2(tailwindcss@4.2.1):
-    dependencies:
-      fast-glob: 3.3.3
-      postcss: 8.5.8
-      tailwindcss: 4.2.1
-
   eslint-scope@8.4.0:
     dependencies:
       esrecurse: 4.3.0
@@ -5532,6 +5524,8 @@ snapshots:
       is-glob: 4.0.3
 
   globals@16.5.0: {}
+
+  globals@17.4.0: {}
 
   globalthis@1.0.4:
     dependencies:
