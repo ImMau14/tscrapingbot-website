@@ -1,16 +1,17 @@
 ---
-import { locales, defaultLocale } from '@i18n/utils.ts'
+import { locales, defaultLocale } from "@i18n/utils.ts"
 const localesJSON = JSON.stringify(locales)
 const fallback = defaultLocale
 ---
-<!DOCTYPE html>
+
+<!doctype html>
 <html lang={fallback}>
   <head>
     <meta charset="utf-8" />
     <meta name="google-site-verification" content="E1jaQlpQ5dmCafMvW9JgjpoaRKeH_XvgYQHwgSkAfH4" />
     <script define:vars={{ locales, fallback }}>
-      const code = navigator.language.split('-')[0];
-      window.location.replace(`/${locales.includes(code) ? code : fallback}`);
+      const code = navigator.language.split("-")[0]
+      window.location.replace(`/${locales.includes(code) ? code : fallback}`)
     </script>
   </head>
 </html>

@@ -1,41 +1,45 @@
 ---
-import '@styles/global.css'
-import '@styles/fonts.css'
+import "@/tailwind.css"
 
-import { NavBar } from '@components/tsx/NavBar/NavBar.tsx'
-import { Links } from '@components/tsx/NavBar/components/Links.tsx'
-import { BgWebImage } from '@components/tsx/BgWebImage.tsx'
-import { HomePage } from '@components/tsx/HomePage/HomePage.tsx'
+import { NavBar } from "@components/tsx/NavBar/NavBar.tsx"
+import { Links } from "@components/tsx/NavBar/components/Links.tsx"
+import { BgWebImage } from "@components/tsx/BgWebImage.tsx"
+import { HomePage } from "@components/tsx/HomePage/HomePage.tsx"
 
-import { locales, getTranslations } from '@i18n/utils.ts'
+import { locales, getTranslations } from "@i18n/utils.ts"
 
 export async function getStaticPaths() {
-	const languages = locales
-	return languages.map(lang => ({
-		params: { lang },
-		props: { lang }
-	}))
+  const languages = locales
+  return languages.map((lang) => ({
+    params: { lang },
+    props: { lang },
+  }))
 }
 
 const { lang } = Astro.params
 const t = await getTranslations(lang)
 ---
 
-<html lang={lang} class="h-full w-full bg-purple-950">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/webp" href="/favicon.webp" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<meta name="theme-color" content="#06020f" />
+<html {lang} class="h-full w-full bg-purple-950">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#06020f" />
     <meta name="description" content={t.home.description} />
-		<title>{t.home.title} - TScrapingBot</title>
-	</head>
-	<body class="w-full h-full overflow-hidden">
-		<div class="w-full h-full relative grid grid-cols-1 grid-rows-[auto_1fr]">
-			<NavBar pages={t.NavBar} client:load />
-			<HomePage client:load className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center" description={t.home.description} button={t.home.button} />
-		</div>
-		<BgWebImage client:visible />
-	</body>
+    <title>{t.home.title} - TScrapingBot</title>
+  </head>
+  <body class="w-full h-full overflow-hidden">
+    <div class="w-full h-full relative grid grid-cols-1 grid-rows-[auto_1fr]">
+      <NavBar pages={t.NavBar} client:load />
+      <HomePage
+        client:load
+        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center"
+        description={t.home.description}
+        button={t.home.button}
+      />
+    </div>
+    <BgWebImage client:visible />
+  </body>
 </html>

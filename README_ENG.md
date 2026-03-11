@@ -8,7 +8,7 @@
 
 A TScrapingBot website I made to test **Astro**.
 
-* *[Readme en Español](./README.md)*
+- _[Readme en Español](./README.md)_
 
 ---
 
@@ -18,12 +18,12 @@ A TScrapingBot website I made to test **Astro**.
 
 ## 🌟 Technologies
 
-* NodeJS 22.17.1
-* React 19.1
-* Astro 5.12.3
-* Framer Motion 12.23.9
-* TailwindCSS 3.4.17
-* TypeScript 5.8
+- NodeJS 22.17.1
+- React 19.1
+- Astro 5.12.3
+- Framer Motion 12.23.9
+- TailwindCSS 3.4.17
+- TypeScript 5.8
 
 ## 🚀 Deployment
 

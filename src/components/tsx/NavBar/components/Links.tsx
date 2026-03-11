@@ -1,8 +1,8 @@
-import { LinksForDesktops } from './LinksForDesktops.tsx'
-import { LinksForMobiles } from './LinksForMobiles.tsx'
+import { LinksForDesktops } from "./LinksForDesktops.tsx"
+import { LinksForMobiles } from "./LinksForMobiles.tsx"
 // import { useMediaQuery } from 'react-responsive'
 
-interface Page { 
+interface Page {
   name: string
   href: string
 }
@@ -14,8 +14,8 @@ export const Links = ({ pages }: Page[]) => {
 
   return (
     <>
-      <LinksForMobiles pages={ pages } />
-      <LinksForDesktops pages={ pages } />
+      <LinksForMobiles pages={pages} />
+      <LinksForDesktops pages={pages} />
     </>
   )
 }

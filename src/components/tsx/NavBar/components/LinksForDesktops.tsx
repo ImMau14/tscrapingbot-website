@@ -1,5 +1,5 @@
-import { motion, LayoutGroup, AnimatePresence } from 'framer-motion'
-import { useState } from 'react'
+import { motion, LayoutGroup, AnimatePresence } from "framer-motion"
+import { useState } from "react"
 
 interface Page {
   name: string
@@ -8,47 +8,36 @@ interface Page {
 
 export const LinksForDesktops = ({ pages }: Page[]) => {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
-  return(
+  return (
     <>
       <LayoutGroup>
-        <ul 
-          className="hidden md:flex space-x-4 gap-8"
-        >
+        <ul className="hidden gap-8 space-x-4 md:flex">
           {pages.map((page, index) => (
-            <motion.li 
-              key={ index } 
-              transition={{ type: 'spring', stiffness: 500, damping: 25 }}
+            <motion.li
+              key={index}
+              transition={{ type: "spring", stiffness: 500, damping: 25 }}
               whileHover={{ scale: 1.06 }}
-              initial={ false }
+              initial={false}
             >
-              <a 
-                href={ page.href } 
-                className="
-                  bg-gradient-to-b from-silver-150 via-silver-150 to-silver-450
-                  bg-clip-text text-transparent hover:text-white duration-200
-                  font-body text-sm 
-                  relative
-                "
-                onMouseEnter={ () => setHoveredIndex(index) }
-                onMouseLeave={ () => setHoveredIndex(null) }
+              <a
+                href={page.href}
+                className="from-silver-150 via-silver-150 to-silver-450 font-body relative bg-gradient-to-b bg-clip-text text-sm text-transparent duration-200 hover:text-white"
+                onMouseEnter={() => setHoveredIndex(index)}
+                onMouseLeave={() => setHoveredIndex(null)}
               >
-                { page.name }
+                {page.name}
                 {hoveredIndex === index && (
                   <AnimatePresence>
-                    <motion.div 
-                      layoutId='hoverLine'
-                      className="
-                        bg-green-450
-                        absolute -bottom-2 left-0
-                        rounded-full w-full h-0.5
-                      "
+                    <motion.div
+                      layoutId="hoverLine"
+                      className="bg-green-450 absolute -bottom-2 left-0 h-0.5 w-full rounded-full"
                       initial={{ opacity: 0 }}
                       animate={{ opacity: 1 }}
                       exit={{ opacity: 0 }}
-                      transition={{ 
-                        type: 'spring', 
+                      transition={{
+                        type: "spring",
                         stiffness: 300,
-                        damping: 20
+                        damping: 20,
                       }}
                     />
                   </AnimatePresence>

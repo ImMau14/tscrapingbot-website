@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+@theme {
+  /* Fonts */
+  --font-heading: "Montserrat Variable", ui-sans-serif, system-ui;
+  --font-body: "Inter Variable", ui-sans-serif, system-ui;
+
+  /* Colors */
+  --color-purple-50: #ece8f4;
+  --color-purple-100: #d9d1e9;
+  --color-purple-150: #c6bade;
+  --color-purple-200: #b3a3d3;
+  --color-purple-250: #a08cc9;
+  --color-purple-300: #8c74be;
+  --color-purple-350: #795db3;
+  --color-purple-400: #6646a8;
+  --color-purple-450: #532f9d;
+  --color-purple-500: #401892;
+  --color-purple-550: #3a1683;
+  --color-purple-600: #331375;
+  --color-purple-650: #2d1166;
+  --color-purple-700: #260e58;
+  --color-purple-750: #200c49;
+  --color-purple-800: #1a0a3a;
+  --color-purple-850: #13072c;
+  --color-purple-900: #0d051d;
+  --color-purple-950: #06020f;
+
+  --color-silver-50: #fcfdff;
+  --color-silver-100: #fafcfc;
+  --color-silver-150: #f8faff;
+  --color-silver-200: #f6f9ff;
+  --color-silver-250: #f5f8ff;
+  --color-silver-300: #f3f6ff;
+  --color-silver-350: #f2f5ff;
+  --color-silver-400: #f0f4ff;
+  --color-silver-450: #eff3ff;
+  --color-silver-500: #edf2ff;
+  --color-silver-550: #6f7380;
+  --color-silver-600: #646873;
+  --color-silver-650: #595c66;
+  --color-silver-700: #4f5159;
+  --color-silver-750: #43454c;
+  --color-silver-800: #383b40;
+  --color-silver-850: #2c2e33;
+  --color-silver-900: #212226;
+  --color-silver-950: #161719;
+
+  --color-blue-50: #e8eef5;
+  --color-blue-100: #d0ddeb;
+  --color-blue-150: #b9cce2;
+  --color-blue-200: #a1bbd8;
+  --color-blue-250: #8aabce;
+  --color-blue-300: #729ac4;
+  --color-blue-350: #5b89ba;
+  --color-blue-400: #4378b1;
+  --color-blue-450: #2c67a7;
+  --color-blue-500: #14569d;
+  --color-blue-550: #124d8d;
+  --color-blue-600: #10457e;
+  --color-blue-650: #0e3c6e;
+  --color-blue-700: #0c345e;
+  --color-blue-750: #0a2b4f;
+  --color-blue-800: #08223f;
+  --color-blue-850: #061a2f;
+  --color-blue-900: #04111f;
+  --color-blue-950: #020910;
+
+  --color-green-50: #e7f9f0;
+  --color-green-100: #cef4e1;
+  --color-green-150: #b6eed3;
+  --color-green-200: #9de8c4;
+  --color-green-250: #85e3b5;
+  --color-green-300: #6cdda6;
+  --color-green-350: #54d797;
+  --color-green-400: #3bd189;
+  --color-green-450: #23cc7a;
+  --color-green-500: #0ac66b;
+  --color-green-550: #09b260;
+  --color-green-600: #089e56;
+  --color-green-650: #078b4b;
+  --color-green-700: #067740;
+  --color-green-750: #056336;
+  --color-green-800: #044f2b;
+  --color-green-850: #033b20;
+  --color-green-900: #022815;
+  --color-green-950: #01140b;
+}
+
+/* Plugin tailwind-scrollbar */
+@plugin "tailwind-scrollbar";

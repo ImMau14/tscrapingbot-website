@@ -1,5 +1,5 @@
-export const locales = ['en', 'es']
-export const defaultLocale = 'en'
+export const locales = ["en", "es"]
+export const defaultLocale = "en"
 
 type TranslationDictionary = {
   [key: string]: {
@@ -22,6 +22,8 @@ export async function getTranslations(lang: string = defaultLocale): Promise<Tra
       const fallback = (await import(`./langs/en.json`)) as TranslationDictionary
       translationsCache.set(lang, fallback)
       return fallback
-    } catch (err) { throw new Error('Could not load any language file') }
+    } catch (err) {
+      throw new Error("Could not load any language file")
+    }
   }
 }
