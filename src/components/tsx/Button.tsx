@@ -1,4 +1,3 @@
-import { motion } from "framer-motion"
 import type { ReactNode } from "react"
 
 interface ButtonProps {
@@ -24,17 +23,11 @@ const styles = {
 export const Button = ({ children, color }: ButtonProps) => {
   const s = styles[color]
   return (
-    <motion.button
-      className={`font-body text-silver-50 flex items-center justify-center rounded-lg border-2 bg-purple-950 px-4 py-1 text-[0.7rem] md:text-sm ${s.border} ${s.hover} duration-150`}
-      initial={false}
-      transition={{
-        scale: { type: "spring", stiffness: 900, damping: 25 },
-        filter: { duration: 0.2 },
-      }}
-      whileHover={{ scale: 1.06 }}
-      whileTap={{ filter: "brightness(1.7)" }}
+    <button
+      draggable="false"
+      className={`font-body text-silver-50 flex cursor-pointer items-center justify-center rounded-lg border-2 bg-purple-950 px-4 py-1 text-[0.7rem] md:text-sm ${s.border} ${s.hover} transition-all duration-150 hover:scale-105 active:scale-110`}
     >
       {children}
-    </motion.button>
+    </button>
   )
 }

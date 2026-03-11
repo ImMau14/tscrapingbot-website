@@ -1,5 +1,5 @@
 import { LinksForDesktops } from "./LinksForDesktops.tsx"
-import { LinksForMobiles } from "./LinksForMobiles.tsx"
+// import { LinksForMobiles } from "./LinksForMobiles.tsx"
 
 type Page = {
   name: string
@@ -13,7 +13,7 @@ interface LinksProps {
 export const Links = ({ pages }: LinksProps) => {
   return (
     <>
-      <LinksForMobiles pages={pages} />
+      {/* <LinksForMobiles pages={pages} /> */}
       <LinksForDesktops pages={pages} />
     </>
   )

@@ -7,21 +7,19 @@
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro",
-    "lint": "eslint . --ignore-pattern \"./.astro/**\" --ignore-pattern \"./dist/**\" --ignore-pattern \"./public/**\" --cache",
+    "lint": "eslint . --ignore-pattern \"./.astro/**\" --ignore-pattern \"./dist/**\" --ignore-pattern \"./public/**\" --ignore-pattern \"./vercel/**\" --cache",
     "lint:fix": "eslint . --fix --ignore-pattern \"./.astro/**\" --ignore-pattern \"./dist/**\" --ignore-pattern \"./public/**\" --cache --cache-location .eslintcache",
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
   "dependencies": {
     "@astrojs/react": "^4.4.2",
-    "@astrojs/vercel": "^10.0.0",
+    "@astrojs/vercel": "^9.0.0",
     "@fontsource-variable/inter": "^5.2.8",
     "@fontsource-variable/montserrat": "^5.2.8",
     "astro": "^5.18.1",
-    "framer-motion": "^12.35.2",
     "react": "^19.2.4",
-    "react-dom": "^19.2.4",
-    "react-responsive": "^10.0.1"
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
     "@astrojs/check": "^0.9.7",
@@ -41,6 +39,7 @@
     "prettier": "^3.8.1",
     "prettier-plugin-astro": "^0.14.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
+    "tailwind-animations": "^1.0.1",
     "tailwindcss": "^4.2.1",
     "typescript": "^5.9.3"
   }
