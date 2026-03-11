@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "headers": [
+    {
+      "source": "/:all*(.{js,css,png,jpg,jpeg,svg,woff,woff2,ico,webp,webm})",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    }
+  ]
+}

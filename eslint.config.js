@@ -15,7 +15,7 @@ import astroParser from "astro-eslint-parser"
 
 export default defineConfig([
   {
-    ignores: ["node_modules", "dist", "build", ".cache", ".astro", "**/*.config.*"],
+    ignores: ["node_modules", "dist", "build", ".cache", ".astro", "**/*.config.*", ".vercel"],
   },
 
   js.configs.recommended,

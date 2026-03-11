@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react"
-import { motion } from "framer-motion"
+
 import { LinksForDesktops } from "./components/LinksForDesktops"
 import { LinksForMobiles } from "./components/LinksForMobiles"
 import { TSLogoSvg } from "@components/tsx/TSLogoSvg"
@@ -24,11 +24,8 @@ export const NavBar: React.FC<NavBarProps> = ({ pages }) => {
   }, [])
 
   return (
-    <motion.nav
-      initial={{ opacity: 0, y: -10 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.4, ease: "easeOut" }}
-      className={`sticky top-0 z-50 w-full backdrop-filter transition duration-200 ease-out ${scrolled ? "backdrop-blur-sm" : "backdrop-blur-none"} flex max-h-12 items-center justify-between p-4 md:max-h-16 md:p-8`}
+    <nav
+      className={`animate-fade-in-down animate-ease-out sticky top-0 z-50 w-full backdrop-filter transition duration-200 ease-out ${scrolled ? "backdrop-blur-sm" : "backdrop-blur-none"} flex max-h-12 items-center justify-between p-4 md:max-h-16 md:p-8`}
     >
       <a
         href="/"
@@ -40,6 +37,6 @@ export const NavBar: React.FC<NavBarProps> = ({ pages }) => {
 
       <LinksForMobiles pages={pages} />
       <LinksForDesktops pages={pages} />
-    </motion.nav>
+    </nav>
   )
 }

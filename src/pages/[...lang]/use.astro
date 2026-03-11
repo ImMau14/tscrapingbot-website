@@ -1,6 +1,7 @@
 ---
-import "@styles/global.css"
-import "@styles/fonts.css"
+export const prerender = true
+
+import "@/tailwind.css"
 
 import { locales, getTranslations } from "@i18n/utils.ts"
 import { BgWebImage } from "@components/tsx/BgWebImage.tsx"
@@ -35,7 +36,6 @@ const t = await getTranslations(lang)
       <UsePage
         use={t.use}
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-2 w-full md:w-[70%]"
-        client:load
       />
     </div>
     <BgWebImage client:visible />

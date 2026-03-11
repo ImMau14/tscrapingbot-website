@@ -1,16 +1,9 @@
-import { motion } from "framer-motion"
 import webImg from "@assets/web.webp"
 
 export const BgWebImage = () => {
   return (
-    <motion.img
-      src={webImg.src}
-      alt="Spider Web Image"
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 0.05 }}
-      transition={{ duration: 1, ease: "easeOut" }}
-      draggable="false"
-      className={`fixed top-0 left-0 z-[-1] h-full w-full object-cover xl:h-full xl:w-full xl:object-cover`}
-    />
+    <div className="animate-fade-half fixed top-0 left-0 z-[-1] h-full w-full xl:h-full xl:w-full">
+      <img src={webImg.src} alt="Spider Web" draggable="false" className="h-full w-full object-cover xl:object-cover" />
+    </div>
   )
 }

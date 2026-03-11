@@ -1,4 +1,3 @@
-import { motion, LayoutGroup, AnimatePresence } from "framer-motion"
 import { useState } from "react"
 
 type Page = {
@@ -11,46 +10,27 @@ interface LinksForDesktopsProps {
 }
 
 export const LinksForDesktops = ({ pages }: LinksForDesktopsProps) => {
-  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null)
+  const [hovered, setHovered] = useState<number | null>(null)
+
   return (
     <>
-      <LayoutGroup>
-        <ul className="hidden gap-8 space-x-4 md:flex">
-          {pages.map((page, index) => (
-            <motion.li
-              key={index}
-              transition={{ type: "spring", stiffness: 500, damping: 25 }}
-              whileHover={{ scale: 1.06 }}
-              initial={false}
+      <ul className="hidden gap-8 space-x-4 md:flex">
+        {pages.map((page, index) => (
+          <li
+            key={index}
+            onMouseEnter={() => setHovered(index)}
+            onMouseLeave={() => setHovered(null)}
+            className={`animate-ease-out relative before:absolute before:-bottom-1.5 before:left-0 before:h-0.5 before:w-full before:bg-green-500 before:opacity-80 ${hovered === index ? "before:animate-expand-horizontally" : "before:animate-contract-horizontally"}`}
+          >
+            <a
+              href={page.href}
+              className="from-silver-150 via-silver-150 to-silver-450 font-body bg-linear-to-b bg-clip-text text-sm text-transparent transition-colors duration-200 hover:text-white"
             >
-              <a
-                href={page.href}
-                className="from-silver-150 via-silver-150 to-silver-450 font-body relative bg-linear-to-b bg-clip-text text-sm text-transparent duration-200 hover:text-white"
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-              >
-                {page.name}
-                {hoveredIndex === index && (
-                  <AnimatePresence>
-                    <motion.div
-                      layoutId="hoverLine"
-                      className="bg-green-450 absolute -bottom-2 left-0 h-0.5 w-full rounded-full"
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{
-                        type: "spring",
-                        stiffness: 300,
-                        damping: 20,
-                      }}
-                    />
-                  </AnimatePresence>
-                )}
-              </a>
-            </motion.li>
-          ))}
-        </ul>
-      </LayoutGroup>
+              {page.name}
+            </a>
+          </li>
+        ))}
+      </ul>
     </>
   )
 }

@@ -1,6 +1,7 @@
 ---
-import "@styles/global.css"
-import "@styles/fonts.css"
+export const prerender = true
+
+import "@/tailwind.css"
 
 import { locales, getTranslations } from "@i18n/utils.ts"
 import { NavBar } from "@components/tsx/NavBar/NavBar.tsx"
@@ -32,12 +33,7 @@ const t = await getTranslations(lang)
   <body class="w-full flex flex-col relative scrollbar-thin scrollbar-thumb-purple-450/40 scrollbar-track-purple-800">
     <div class="w-full flex flex-col">
       <NavBar pages={t.NavBar} client:load />
-      <FeaturesPage
-        className="p-4 my-20 md:my-10"
-        featuresList={t.features.featuresList}
-        title={t.features.title}
-        client:load
-      />
+      <FeaturesPage className="p-4 my-20 md:my-10" featuresList={t.features.featuresList} title={t.features.title} />
     </div>
     <BgWebImage client:visible />
   </body>
