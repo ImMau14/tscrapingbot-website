@@ -9,19 +9,29 @@
   "home": {
     "title": "Inicio",
     "description": "¡Analiza páginas con IA desde Telegram con TScrapingBot!",
+    "seo": {
+      "title": "TScrapingBot - IA en Telegram",
+      "description": "Analiza contenido web y genera respuestas con IA directamente desde Telegram.",
+      "twitterCard": "summary"
+    },
     "button": {
       "GitHub": "Ver en GitHub",
       "Telegram": "Ver en Telegram"
     }
   },
   "inProcess": {
-    "title": "Página en desarrollo...",
+    "title": "En desarrollo...",
     "header": "¡Lo siento, esta página está en progreso!",
-    "description": "Si está viendo esto, es porque el compilador ya no compila, los estilos no se estilan y la función ya no funciona"
+    "description": "Si está viendo esto, es porque el compilador ya no compila, los estilos no se estilan y el objeto no tiene objetivo"
   },
   "features": {
     "title": "Características",
     "metaContent": "Desde generación de texto y respuestas, hasta análisis de contenido web e imágenes.",
+    "seo": {
+      "title": "Funcionalidades de TScrapingBot",
+      "description": "Análisis de URLs, memoria de contexto y modo de razonamiento profundo con IA.",
+      "twitterCard": "summary"
+    },
     "featuresList": {
       "textGeneration": {
         "title": "Generación de Texto y Respuestas",
@@ -44,6 +54,11 @@
   "stack": {
     "title": "Tecnologías",
     "metaContent": "Originalmente hecho en Python, TScrapingBot se encuentra desarrollado completamente en Rust.",
+    "seo": {
+      "title": "Stack Tecnológico - Rust & PostgreSQL",
+      "description": "Descubre las tecnologías que hacen a TScrapingBot rápido y eficiente.",
+      "twitterCard": "summary"
+    },
     "description1": "Originalmente hecho en Python, TScrapingBot se encuentra desarrollado completamente en Rust.",
     "description2": "Estas tecnologías podrían cambiar en un futuro para hacer al bot más eficiente.",
     "stackList": [
@@ -80,6 +95,11 @@
   "use": {
     "title": "Usar Ahora",
     "metaContent": "Formas de usar TScrapingBot",
+    "seo": {
+      "title": "Comienza a usar TScrapingBot",
+      "description": "Accede al bot de Telegram y empieza a procesar la web con IA.",
+      "twitterCard": "summary"
+    },
     "description": "Escanea este QR para usar en Telegram",
     "button": "O presiona este botón"
   }

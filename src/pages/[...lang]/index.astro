@@ -18,7 +18,7 @@ const { lang } = Astro.params
 const t = await getTranslations(lang)
 ---
 
-<BaseLayout {t}>
+<BaseLayout {t} seo={t.home.seo}>
   <HomePage
     className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center"
     description={t.home.description}

@@ -9,6 +9,11 @@
   "home": {
     "title": "Home",
     "description": "Analyze pages with AI from Telegram with TScrapingBot!",
+    "seo": {
+      "title": "TScrapingBot - AI on Telegram",
+      "description": "Analyze web content and generate AI responses directly from Telegram.",
+      "twitterCard": "summary"
+    },
     "button": {
       "GitHub": "View on GitHub",
       "Telegram": "View on Telegram"
@@ -22,6 +27,11 @@
   "features": {
     "title": "Features",
     "metaContent": "From text and response generation, to web content and image analysis.",
+    "seo": {
+      "title": "TScrapingBot Features",
+      "description": "URL analysis, context memory, and deep reasoning mode with AI.",
+      "twitterCard": "summary"
+    },
     "featuresList": {
       "textGeneration": {
         "title": "Text and Response Generation",
@@ -44,6 +54,11 @@
   "stack": {
     "title": "Technologies",
     "metaContent": "Originally made in Python, TScrapingBot is now fully developed in Rust.",
+    "seo": {
+      "title": "Tech Stack - Rust & PostgreSQL",
+      "description": "Discover the technologies that make TScrapingBot fast and efficient.",
+      "twitterCard": "summary"
+    },
     "description1": "Originally made in Python, TScrapingBot is now fully developed in Rust.",
     "description2": "These technologies might change in the future to make the bot more efficient.",
     "stackList": [
@@ -80,6 +95,11 @@
   "use": {
     "title": "Use Now",
     "metaContent": "Ways to use TScrapingBot",
+    "seo": {
+      "title": "Start using TScrapingBot",
+      "description": "Access the Telegram bot and start scraping the web with AI.",
+      "twitterCard": "summary"
+    },
     "description": "Scan this QR to use on Telegram",
     "button": "Or press this button"
   }
