@@ -1,10 +1,10 @@
 {
   "lang": "en",
   "NavBar": [
-    { "name": "Home", "href": "/en" },
-    { "name": "Features", "href": "/en/features" },
-    { "name": "Technologies", "href": "/en/stack" },
-    { "name": "Use Now", "href": "/en/use" }
+    { "name": "Home", "href": "/" },
+    { "name": "Features", "href": "/features" },
+    { "name": "Technologies", "href": "/stack" },
+    { "name": "Use Now", "href": "/use" }
   ],
   "home": {
     "title": "Home",

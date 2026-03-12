@@ -1,10 +1,10 @@
 {
   "lang": "es",
   "NavBar": [
-    { "name": "Inicio", "href": "/es" },
-    { "name": "Características", "href": "/es/features" },
-    { "name": "Tecnologías", "href": "/es/stack" },
-    { "name": "Usar Ahora", "href": "/es/use" }
+    { "name": "Inicio", "href": "/" },
+    { "name": "Características", "href": "/features" },
+    { "name": "Tecnologías", "href": "/stack" },
+    { "name": "Usar Ahora", "href": "/use" }
   ],
   "home": {
     "title": "Inicio",
