@@ -1,12 +1,10 @@
 ---
 export const prerender = true
 
-import "@/tailwind.css"
+import BaseLayout from "@layouts/BaseLayout.astro"
 
 import { locales, getTranslations } from "@i18n/utils.ts"
-import NavBar from "@components/NavBar.astro"
 import { FeaturesPage } from "@components/tsx/FeaturesPage/FeaturesPage.tsx"
-import { BgWebImage } from "@components/tsx/BgWebImage.tsx"
 
 export async function getStaticPaths() {
   const languages = locales
@@ -20,21 +18,6 @@ const { lang } = Astro.params
 const t = await getTranslations(lang)
 ---
 
-<html {lang} class="w-full h-full bg-purple-950">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="theme-color" content="#06020f" />
-    <meta name="description" content={t.features.metaContent} />
-    <title>{t.features.title} - TScrapingBot</title>
-  </head>
-  <body class="w-full flex flex-col relative scrollbar-thin scrollbar-thumb-purple-450/40 scrollbar-track-purple-800">
-    <div class="w-full flex flex-col">
-      <NavBar pages={t.NavBar} />
-      <FeaturesPage className="p-4 my-20 md:my-10" featuresList={t.features.featuresList} title={t.features.title} />
-    </div>
-    <BgWebImage />
-  </body>
-</html>
+<BaseLayout {t} className="overflow-y-auto">
+  <FeaturesPage className="p-4 my-20 md:my-10" featuresList={t.features.featuresList} title={t.features.title} />
+</BaseLayout>

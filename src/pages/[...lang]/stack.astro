@@ -1,11 +1,9 @@
 ---
 export const prerender = true
 
-import "@/tailwind.css"
+import BaseLayout from "@layouts/BaseLayout.astro"
 
 import { locales, getTranslations } from "@i18n/utils.ts"
-import NavBar from "@components/NavBar.astro"
-import { BgWebImage } from "@components/tsx/BgWebImage.tsx"
 import { StackPage } from "@components/tsx/StackPage/StackPage.tsx"
 
 export async function getStaticPaths() {
@@ -20,24 +18,9 @@ const { lang } = Astro.params
 const t = await getTranslations(lang)
 ---
 
-<html {lang} class="w-full h-full bg-purple-950">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/webp" href="/favicon.webp" />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={t.stack.metaContent} />
-    <meta name="theme-color" content="#06020f" />
-    <title>{t.stack.title} - TScrapingBot</title>
-  </head>
-  <body class="w-full h-full flex flex-col">
-    <div class="w-full h-full flex flex-col relative">
-      <NavBar pages={t.NavBar} />
-      <StackPage
-        className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 w-full md:w-[70%]"
-        stack={t.stack}
-      />
-    </div>
-    <BgWebImage />
-  </body>
-</html>
+<BaseLayout {t}>
+  <StackPage
+    className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col gap-8 w-full md:w-[70%]"
+    stack={t.stack}
+  />
+</BaseLayout>
