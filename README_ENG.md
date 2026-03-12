@@ -18,12 +18,11 @@ A TScrapingBot website I made to test **Astro**.
 
 ## 🌟 Technologies
 
-- NodeJS 22.17.1
-- React 19.1
-- Astro 5.12.3
-- Framer Motion 12.23.9
-- TailwindCSS 3.4.17
-- TypeScript 5.8
+- NodeJS
+- React
+- Astro
+- TailwindCSS
+- TypeScript
 
 ## 🚀 Deployment
 
@@ -38,13 +37,13 @@ git clone https://github.com/ImMau14/tscrapingbot-website
 cd tscrapingbot-website
 ```
 
-2. Install dependencies (I suggest using pnpm):
+1. Install dependencies (I suggest using pnpm):
 
 ```bash
 pnpm install
 ```
 
-3. Start the project:
+1. Start the project:
 
 ```bash
 pnpm run dev # Or pnpm run build if you want to generate static files
