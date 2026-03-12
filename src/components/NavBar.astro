@@ -1,0 +1,164 @@
+---
+export const prerender = true
+
+import { TSLogoSvg } from "@components/tsx/TSLogoSvg"
+import { MenuButtonSvg } from "@components/tsx/MenuButtonSvg"
+
+interface Page {
+  name: string
+  href: string
+}
+
+interface Props {
+  pages: Page[]
+}
+
+const { pages } = Astro.props
+
+const getDelayClass = (idx: number) => {
+  const delays = [
+    "delay-[0ms]",
+    "delay-[40ms]",
+    "delay-[80ms]",
+    "delay-[120ms]",
+    "delay-[160ms]",
+    "delay-[200ms]",
+    "delay-[240ms]",
+    "delay-[280ms]",
+    "delay-[320ms]",
+    "delay-[360ms]",
+  ]
+  return delays[idx] || "delay-[400ms]"
+}
+---
+
+<nav
+  id="main-nav"
+  class="animate-fade-in-down animate-ease-out sticky top-0 z-50 w-full backdrop-filter transition duration-200 ease-out flex max-h-12 items-center justify-between p-4 md:max-h-16 md:p-8"
+>
+  <a
+    href="/"
+    class="font-heading from-silver-150 via-silver-150 to-silver-550 flex items-center bg-linear-to-b bg-clip-text text-sm font-bold text-transparent no-underline md:text-xl"
+  >
+    <TSLogoSvg className="fill-silver-450 mr-4 h-6 md:h-8" />
+    <h2>TScrapingBot</h2>
+  </a>
+
+  <ul class="hidden gap-8 space-x-4 md:flex" id="desktop-links">
+    {
+      pages.map((page, index) => (
+        <li
+          data-index={index}
+          class="animate-ease-out relative before:absolute before:-bottom-1.5 before:left-0 before:h-0.5 before:w-full before:bg-green-500 before:opacity-80 before:animate-contract-horizontally"
+        >
+          <a
+            href={page.href}
+            class="from-silver-150 via-silver-150 to-silver-450 font-body bg-linear-to-b bg-clip-text text-sm text-transparent transition-colors duration-200 hover:text-white"
+          >
+            {page.name}
+          </a>
+        </li>
+      ))
+    }
+  </ul>
+
+  <div class="relative inline-block md:hidden">
+    <button
+      id="mobile-menu-btn"
+      aria-label="Links"
+      class="text-silver-450 bg-transparent transition-transform duration-300 ease-in-out hover:scale-[1.03]"
+    >
+      <MenuButtonSvg />
+    </button>
+
+    <div
+      id="mobile-menu"
+      class="absolute right-0 mt-2 grid w-40 origin-top rounded-md shadow-lg transition-all duration-300 ease-[cubic-bezier(0.175,0.885,0.32,1.275)] pointer-events-none scale-95 grid-rows-[0fr] opacity-0"
+    >
+      <ul class="flex min-h-0 flex-col overflow-hidden rounded-md bg-black">
+        {
+          pages.map((page, idx) => (
+            <li
+              class:list={[
+                "transition-all duration-250 ease-out hover:bg-green-500/20",
+                getDelayClass(idx),
+                "mobile-link",
+              ]}
+            >
+              <a href={page.href} class="font-body text-silver-450 hover:text-silver-50 block px-4 py-2 text-sm">
+                {page.name}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<script>
+  const nav = document.getElementById("main-nav")
+
+  const handleScroll = () => {
+    if (window.scrollY > 0) {
+      nav?.classList.add("backdrop-blur-sm")
+      nav?.classList.remove("backdrop-blur-none")
+    } else {
+      nav?.classList.add("backdrop-blur-none")
+      nav?.classList.remove("backdrop-blur-sm")
+    }
+  }
+
+  handleScroll()
+  window.addEventListener("scroll", handleScroll, { passive: true })
+
+  const menuBtn = document.getElementById("mobile-menu-btn")
+  const mobileMenu = document.getElementById("mobile-menu")
+  const mobileLinks = document.querySelectorAll(".mobile-link")
+
+  let isOpen = false
+
+  const toggleMenu = () => {
+    isOpen = !isOpen
+
+    if (isOpen) {
+      mobileMenu?.classList.remove("pointer-events-none", "scale-95", "grid-rows-[0fr]", "opacity-0")
+      mobileMenu?.classList.add("pointer-events-auto", "scale-100", "grid-rows-[1fr]", "opacity-100")
+
+      mobileLinks.forEach((link) => {
+        link.classList.remove("-translate-y-1.25", "opacity-0")
+        link.classList.add("translate-y-0", "opacity-100")
+      })
+    } else {
+      mobileMenu?.classList.add("pointer-events-none", "scale-95", "grid-rows-[0fr]", "opacity-0")
+      mobileMenu?.classList.remove("pointer-events-auto", "scale-100", "grid-rows-[1fr]", "opacity-100")
+
+      mobileLinks.forEach((link) => {
+        link.classList.add("-translate-y-1.25", "opacity-0")
+        link.classList.remove("translate-y-0", "opacity-100")
+      })
+    }
+  }
+
+  menuBtn?.addEventListener("click", toggleMenu)
+
+  mobileLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      if (isOpen) toggleMenu()
+    })
+  })
+
+  const desktopItems = document.querySelectorAll("#desktop-links > li")
+
+  desktopItems.forEach((item) => {
+    item.addEventListener("mouseenter", () => {
+      item.classList.remove("before:animate-contract-horizontally")
+      item.classList.add("before:animate-expand-horizontally")
+    })
+
+    item.addEventListener("mouseleave", () => {
+      item.classList.remove("before:animate-expand-horizontally")
+      item.classList.add("before:animate-contract-horizontally")
+    })
+  })
+</script>

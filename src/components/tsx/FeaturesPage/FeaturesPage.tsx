@@ -1,69 +1,40 @@
-import { motion } from 'framer-motion'
-import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
+import { TSLogoSvg } from "@components/tsx/TSLogoSvg.tsx"
 
 interface FeaturesPageProps {
   className: string
-  featuresList: Record<string, {
-    title: string
-    content: string
-  }>
+  featuresList: Record<
+    string,
+    {
+      title: string
+      content: string
+    }
+  >
   title: string
 }
 
 export const FeaturesPage = ({ className, featuresList, title }: FeaturesPageProps) => {
-  const offset = -20
-
   return (
     <main className={className}>
-      <motion.header
-        initial={{ opacity: 0, y: offset }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1, ease: 'easeOut', delay: 0 }}
-        className="flex flex-col items-center gap-2 mb-8"
-      >
+      <header className="animate-fade-in-down animate-ease animate-delay-100 mb-16 flex flex-col items-center gap-2">
         <TSLogoSvg className="fill-silver-300 h-16" />
-        <h1 
-          className="
-            bg-gradient-to-b from-silver-150 via-silver-150 to-silver-550 bg-clip-text text-transparent
-            text-4xl md:text-5xl font-heading font-bold mt-2
-          "
-        >
+        <h1 className="from-silver-150 via-silver-150 to-silver-550 font-heading mt-2 bg-linear-to-b bg-clip-text text-4xl font-bold text-transparent md:text-5xl">
           {title}
         </h1>
-      </motion.header>
+      </header>
 
-      <div className="grid grid-cols-1 gap-8 w-full px-4 md:px-60">
-        {Object.values(featuresList).map((feature, i) => (
-          <motion.div
+      <div className="animate-fade-in-down animate-ease animate-delay-200 mb-16 grid w-full grid-cols-1 gap-8 px-4 md:mb-[10vh] md:px-60">
+        {Object.values(featuresList).map((feature) => (
+          <div
             key={feature.title}
-            initial={{ opacity: 0, y: offset }}
-            whileHover={{ scale: 1.02, filter: 'brightness(1.7)' }}
-            whileTap={{ filter: 'brightness(2)' }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ 
-              opacity: { duration: 0.8, ease: 'easeOut', delay: i * 0.2 + 0.2 },
-              y: { duration: 0.8, ease: 'easeOut', delay: i * 0.2 + 0.2 },
-              scale: { duration: 0.2 },
-              filter: { duration: 0.3 }
-            }}
-            className="
-              bg-gradient-to-b from-purple-800 via-purple-950 to-purple-950
-              border border-purple-300
-              rounded-lg p-6 flex flex-col gap-6
-              w-full h-full
-            "
+            className="timeline-view animate-zoom-in animate-ease animate-range-[entry_5%_contain_20%] flex h-full w-full flex-col gap-6 rounded-lg border border-purple-300 bg-linear-to-b from-purple-800 via-purple-950 to-purple-950 p-6 transition-all duration-500 ease-in-out hover:scale-[103%] active:scale-105"
           >
             <div className="flex flex-col gap-4">
-              <h2 className="text-2xl font-semibold font-heading bg-gradient-to-b from-silver-150 via-silver-150 to-silver-550 bg-clip-text text-transparent pb-2">
+              <h2 className="font-heading from-silver-150 via-silver-150 to-silver-550 bg-linear-to-b bg-clip-text pb-2 text-2xl font-semibold text-transparent">
                 {feature.title}
               </h2>
-              <p className="text-md font-body text-silver-400 leading-loose">
-                {feature.content}
-              </p>
+              <p className="text-md font-body text-silver-400 leading-loose">{feature.content}</p>
             </div>
-          </motion.div>
+          </div>
         ))}
       </div>
     </main>

@@ -9,23 +9,33 @@
   "home": {
     "title": "Inicio",
     "description": "¡Analiza páginas con IA desde Telegram con TScrapingBot!",
+    "seo": {
+      "title": "TScrapingBot - IA en Telegram",
+      "description": "Analiza contenido web y genera respuestas con IA directamente desde Telegram.",
+      "twitterCard": "summary"
+    },
     "button": {
       "GitHub": "Ver en GitHub",
       "Telegram": "Ver en Telegram"
     }
   },
   "inProcess": {
-    "title": "Página en desarrollo...",
+    "title": "En desarrollo...",
     "header": "¡Lo siento, esta página está en progreso!",
-    "description": "Si está viendo esto, es porque el compilador ya no compila, los estilos no se estilan y la función ya no funciona"
+    "description": "Si está viendo esto, es porque el compilador ya no compila, los estilos no se estilan y el objeto no tiene objetivo"
   },
   "features": {
     "title": "Características",
     "metaContent": "Desde generación de texto y respuestas, hasta análisis de contenido web e imágenes.",
+    "seo": {
+      "title": "Funcionalidades de TScrapingBot",
+      "description": "Análisis de URLs, memoria de contexto y modo de razonamiento profundo con IA.",
+      "twitterCard": "summary"
+    },
     "featuresList": {
       "textGeneration": {
         "title": "Generación de Texto y Respuestas",
-        "content": "Capacidad para generar respuestas de texto y mantener conversaciones fluídas, impulsado por la inteligencia artificial de Gemini 2.5."
+        "content": "Capacidad para generar respuestas de texto y mantener conversaciones fluídas, impulsado por inteligencia artificial."
       },
       "webAnalytics": {
         "title": "Análisis de Contenido Web",
@@ -43,43 +53,53 @@
   },
   "stack": {
     "title": "Tecnologías",
-    "metaContent": "TScrapingBot funciona con distintas tecnologías, pero principalmente está hecho en Python.",
-    "description1": "TScrapingBot funciona con distintas tecnologías, pero principalmente está hecho en Python.",
+    "metaContent": "Originalmente hecho en Python, TScrapingBot se encuentra desarrollado completamente en Rust.",
+    "seo": {
+      "title": "Stack Tecnológico - Rust & PostgreSQL",
+      "description": "Descubre las tecnologías que hacen a TScrapingBot rápido y eficiente.",
+      "twitterCard": "summary"
+    },
+    "description1": "Originalmente hecho en Python, TScrapingBot se encuentra desarrollado completamente en Rust.",
     "description2": "Estas tecnologías podrían cambiar en un futuro para hacer al bot más eficiente.",
     "stackList": [
       {
-        "name": "Python",
-        "icon": "https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white"
+        "name": "Rust",
+        "icon": "https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
         "name": "Telegram",
         "icon": "https://img.shields.io/badge/Telegram-000000?style=for-the-badge&logo=telegram&logoColor=white"
       },
       {
-        "name": "Flask",
-        "icon": "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
+        "name": "Teloxide",
+        "icon": "https://img.shields.io/badge/Teloxide-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
-        "name": "Gemini",
-        "icon": "https://img.shields.io/badge/Gemini-000000?style=for-the-badge&logo=googlegemini&logoColor=white"
+        "name": "Axum",
+        "icon": "https://img.shields.io/badge/Axum-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
         "name": "PostgreSQL",
         "icon": "https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=white"
       },
       {
-        "name": "Requests",
-        "icon": "https://img.shields.io/badge/Requests-000000?style=for-the-badge&logo=python&logoColor=white"
+        "name": "SQLx",
+        "icon": "https://img.shields.io/badge/SQLx-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
-        "name": "Beautiful Soup",
-        "icon": "https://img.shields.io/badge/Beautiful%20Soup-black?style=for-the-badge&logo=python&logoColor=white"
+        "name": "Reqwest",
+        "icon": "https://img.shields.io/badge/Reqwest-black?style=for-the-badge&logo=rust&logoColor=white"
       }
     ]
   },
   "use": {
     "title": "Usar Ahora",
     "metaContent": "Formas de usar TScrapingBot",
+    "seo": {
+      "title": "Comienza a usar TScrapingBot",
+      "description": "Accede al bot de Telegram y empieza a procesar la web con IA.",
+      "twitterCard": "summary"
+    },
     "description": "Escanea este QR para usar en Telegram",
     "button": "O presiona este botón"
   }

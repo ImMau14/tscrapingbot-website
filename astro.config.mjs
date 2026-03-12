@@ -1,29 +1,45 @@
-// @ts-check
-import { defineConfig } from 'astro/config'
+import { defineConfig } from "astro/config"
 
-import react from '@astrojs/react'
-import tailwind from '@astrojs/tailwind'
+import react from "@astrojs/react"
+import vercel from "@astrojs/vercel"
 
-// For alias imports
-import { fileURLToPath, URL } from 'node:url'
+import tailwind from "@tailwindcss/vite"
 
-// https://astro.build/config
+import { fileURLToPath, URL } from "node:url"
+
 export default defineConfig({
-  integrations: [react(), tailwind()],
+  integrations: [react()],
 
   vite: {
-    plugins: [],
+    plugins: [tailwind()],
     resolve: {
       alias: {
-        "@styles": fileURLToPath(new URL('./src/styles', import.meta.url)),
-        "@components": fileURLToPath(new URL('./src/components', import.meta.url)),
-        "@assets": fileURLToPath(new URL('./src/assets', import.meta.url)),
-        "@i18n": fileURLToPath(new URL('./src/i18n', import.meta.url))
-      }
-    }
+        "@": fileURLToPath(new URL("./src", import.meta.url)),
+        "@layouts": fileURLToPath(new URL("./src/layouts", import.meta.url)),
+        "@components": fileURLToPath(new URL("./src/components", import.meta.url)),
+        "@assets": fileURLToPath(new URL("./src/assets", import.meta.url)),
+        "@i18n": fileURLToPath(new URL("./src/i18n", import.meta.url)),
+      },
+    },
+
+    ssr: {
+      noExternal: ["@tailwindcss/vite"],
+    },
+
+    build: {
+      assetsInlineLimit: 0,
+    },
   },
 
-  output: "static",
-  build: { inlineStylesheets: "auto" },
-  server: { host: true, port: 4321 }
+  build: {
+    inlineStylesheets: "never",
+    assetsPrefix: "/",
+  },
+
+  trailingSlash: "never",
+
+  output: "server",
+  adapter: vercel({
+    edgeMiddleware: true,
+  }),
 })

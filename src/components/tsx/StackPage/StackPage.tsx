@@ -1,5 +1,4 @@
-import { motion } from 'framer-motion'
-import { TSLogoSvg } from '@components/tsx/TSLogoSvg.tsx'
+import { TSLogoSvg } from "@components/tsx/TSLogoSvg.tsx"
 
 interface StackPageProps {
   className: string
@@ -16,55 +15,33 @@ interface StackPageProps {
 }
 
 export const StackPage = ({ className, stack }: StackPageProps) => {
-  const offset = -20
+  const delays = [
+    "animate-delay-300",
+    "animate-delay-400",
+    "animate-delay-500",
+    "animate-delay-600",
+    "animate-delay-700",
+    "animate-delay-800",
+    "animate-delay-900",
+    "animate-delay-1000",
+  ]
 
   return (
     <main className={className}>
-      <motion.header
-        initial={{ opacity: 0, y: offset }}
-        whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, amount: 0.5 }}
-        transition={{ duration: 1, ease: 'easeOut' }}
-        className='flex flex-col items-center gap-2'
-      >
+      <header className="animate-fade-in-down animate-ease animate-delay-200 flex flex-col items-center gap-2">
         <TSLogoSvg className="fill-silver-300 h-16" />
-        <h1
-          className='
-            bg-gradient-to-b from-silver-150 via-silver-150 to-silver-550
-            bg-clip-text text-transparent pb-2
-            text-4xl md:text-5xl font-heading font-bold
-          '
-        >
+        <h1 className="from-silver-150 via-silver-150 to-silver-550 font-heading bg-linear-to-b bg-clip-text pb-2 text-4xl font-bold text-transparent md:text-5xl">
           {stack.title}
         </h1>
-        <p className='text-md font-body text-silver-450 text-center px-4 md:px-10'>
-          {stack.description1}
-        </p>
-        <p className='text-md font-body text-silver-450 text-center px-4 md:px-10'>
-          {stack.description2}
-        </p>
-      </motion.header>
+        <p className="text-md font-body text-silver-450 px-4 text-center md:px-10">{stack.description1}</p>
+        <p className="text-md font-body text-silver-450 px-4 text-center md:px-10">{stack.description2}</p>
+      </header>
 
-      <div className='flex gap-4 justify-center items-center px-0 md:px-4 flex-wrap'>
+      <div className="flex flex-wrap items-center justify-center gap-4 px-0 md:px-4">
         {stack.stackList.map((item, i) => (
-          <motion.img
+          <img
             key={item.name}
-            initial={{ opacity: 0, y: offset }}
-            whileHover={{ scale: 1.05, filter: 'brightness(1.7)' }}
-            whileTap={{ scale: 1.10 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{
-              opacity: { duration: 0.8, ease: 'easeOut', delay: i * 0.1 + 0.1 },
-              y: { duration: 0.8, ease: 'easeOut', delay: i * 0.1 + 0.1 },
-              scale: { duration: 0.2 }
-            }}
-            className="
-              w-30 h-auto
-              border border-2 border-blue-350
-              rounded-lg
-            "
-
+            className={`border-blue-350 animate-fade-in-down animate-ease h-10 rounded-lg border-2 transition-all hover:scale-105 active:scale-110 ${delays[i]}`}
             alt={item.name}
             src={item.icon}
           />

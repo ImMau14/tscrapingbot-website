@@ -1,27 +1,20 @@
-export const locales = ['en', 'es']
-export const defaultLocale = 'en'
+import enJSON from "./langs/en.json"
 
-type TranslationDictionary = {
-  [key: string]: {
-    [subKey: string]: string
-  }
-}
+export type TranslationDictionary = typeof enJSON
 
-const translationsCache = new Map<string, TranslationDictionary>()
+export const locales = ["en", "es"]
+export const defaultLocale = "en"
 
 export async function getTranslations(lang: string = defaultLocale): Promise<TranslationDictionary> {
-  if (translationsCache.has(lang)) return translationsCache.get(lang)!
-
   try {
     const translations = (await import(`./langs/${lang}.json`)) as TranslationDictionary
-    translationsCache.set(lang, translations)
+
     return translations
   } catch (error) {
     console.error(`Could not load translations for ${lang}:`, error)
-    try {
-      const fallback = (await import(`./langs/en.json`)) as TranslationDictionary
-      translationsCache.set(lang, fallback)
-      return fallback
-    } catch (err) { throw new Error('Could not load any language file') }
+
+    const fallback = (await import(`./langs/en.json`)) as TranslationDictionary
+
+    return fallback
   }
 }

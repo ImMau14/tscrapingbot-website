@@ -1,0 +1,66 @@
+---
+import "@/tailwind.css"
+
+import NavBar from "@components/NavBar.astro"
+import { BgWebImage } from "@components/tsx/BgWebImage.tsx"
+
+import type { TranslationDictionary } from "@i18n/utils"
+
+interface SEOProps {
+  title?: string
+  description?: string
+  image?: string
+  url?: string
+  type?: string
+  twitterCard?: string
+}
+
+interface Props {
+  className?: string
+  t: TranslationDictionary
+  seo?: SEOProps
+}
+
+const { t, className, seo }: Props = Astro.props
+
+const host = import.meta.env.VERCEL_URL
+  ? `https://${import.meta.env.VERCEL_URL}`
+  : Astro.site?.origin || Astro.url.origin
+
+const metaTitle = seo?.title || t.home.title
+const metaDescription = seo?.description || t.home.description
+const metaImage = new URL("/cover.jpg", host).toString()
+const canonicalURL = new URL(Astro.url.pathname, host).toString()
+const twitterCard = seo?.twitterCard || "summary"
+---
+
+<html lang={t.lang} class="h-full w-full bg-purple-950">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/webp" href="/favicon.webp" />
+    <meta name="ogg:site_name" content="TScrapingBot" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="theme-color" content="#06020f" />
+    <meta name="description" content={metaDescription} />
+    <title>{metaTitle} - TScrapingBot</title>
+
+    <meta property="og:title" content={metaTitle} />
+    <meta property="og:description" content={metaDescription} />
+    <meta property="og:image" content={metaImage} />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:type" content="website" />
+
+    <meta name="twitter:card" content={twitterCard} />
+    <meta name="twitter:title" content={metaTitle} />
+    <meta name="twitter:description" content={metaDescription} />
+    <meta name="twitter:image" content={metaImage} />
+  </head>
+  <body class:list={["w-full h-full overflow-hidden", className]}>
+    <div class="w-full h-full relative grid grid-cols-1 grid-rows-[auto_1fr]">
+      <NavBar pages={t.NavBar} />
+      <slot />
+    </div>
+    <BgWebImage />
+  </body>
+</html>
