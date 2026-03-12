@@ -25,7 +25,7 @@
     "featuresList": {
       "textGeneration": {
         "title": "Text and Response Generation",
-        "content": "Ability to generate text responses and maintain fluid conversations, powered by Gemini 2.5's artificial intelligence."
+        "content": "Ability to generate text responses and maintain fluid conversations, powered by artificial intelligence."
       },
       "webAnalytics": {
         "title": "Web Content Analysis",
@@ -43,37 +43,37 @@
   },
   "stack": {
     "title": "Technologies",
-    "metaContent": "TScrapingBot works with different technologies, but is primarily made in Python.",
-    "description1": "TScrapingBot works with different technologies, but is primarily made in Python.",
+    "metaContent": "Originally made in Python, TScrapingBot is now fully developed in Rust.",
+    "description1": "Originally made in Python, TScrapingBot is now fully developed in Rust.",
     "description2": "These technologies might change in the future to make the bot more efficient.",
     "stackList": [
       {
-        "name": "Python",
-        "icon": "https://img.shields.io/badge/Python-000000?style=for-the-badge&logo=python&logoColor=white"
+        "name": "Rust",
+        "icon": "https://img.shields.io/badge/Rust-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
         "name": "Telegram",
         "icon": "https://img.shields.io/badge/Telegram-000000?style=for-the-badge&logo=telegram&logoColor=white"
       },
       {
-        "name": "Flask",
-        "icon": "https://img.shields.io/badge/Flask-000000?style=for-the-badge&logo=flask&logoColor=white"
+        "name": "Teloxide",
+        "icon": "https://img.shields.io/badge/Teloxide-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
-        "name": "Gemini",
-        "icon": "https://img.shields.io/badge/Gemini-000000?style=for-the-badge&logo=googlegemini&logoColor=white"
+        "name": "Axum",
+        "icon": "https://img.shields.io/badge/Axum-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
         "name": "PostgreSQL",
         "icon": "https://img.shields.io/badge/PostgreSQL-000000?style=for-the-badge&logo=postgresql&logoColor=white"
       },
       {
-        "name": "Requests",
-        "icon": "https://img.shields.io/badge/Requests-000000?style=for-the-badge&logo=python&logoColor=white"
+        "name": "SQLx",
+        "icon": "https://img.shields.io/badge/SQLx-000000?style=for-the-badge&logo=rust&logoColor=white"
       },
       {
-        "name": "Beautiful Soup",
-        "icon": "https://img.shields.io/badge/Beautiful%20Soup-black?style=for-the-badge&logo=python&logoColor=white"
+        "name": "Reqwest",
+        "icon": "https://img.shields.io/badge/Reqwest-black?style=for-the-badge&logo=rust&logoColor=white"
       }
     ]
   },
