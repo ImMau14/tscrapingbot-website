@@ -3,7 +3,7 @@ export const prerender = true
 
 import "@/tailwind.css"
 
-import { NavBar } from "@components/tsx/NavBar/NavBar.tsx"
+import NavBar from "@components/NavBar.astro"
 import { BgWebImage } from "@components/tsx/BgWebImage.tsx"
 import { HomePage } from "@components/tsx/HomePage/HomePage.tsx"
 
@@ -33,13 +33,13 @@ const t = await getTranslations(lang)
   </head>
   <body class="w-full h-full overflow-hidden">
     <div class="w-full h-full relative grid grid-cols-1 grid-rows-[auto_1fr]">
-      <NavBar pages={t.NavBar} client:load />
+      <NavBar pages={t.NavBar} />
       <HomePage
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex flex-col items-center gap-8 justify-center"
         description={t.home.description}
         button={t.home.button}
       />
     </div>
-    <BgWebImage client:load />
+    <BgWebImage />
   </body>
 </html>

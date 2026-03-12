@@ -1,4 +1,5 @@
 import { defineConfig } from "eslint/config"
+
 import js from "@eslint/js"
 import globals from "globals"
 
@@ -27,7 +28,10 @@ export default defineConfig([
       parser: tsParser,
       ecmaVersion: 2020,
       sourceType: "module",
-      globals: globals.browser,
+      globals: {
+        ...globals.browser,
+        ...globals.node,
+      },
     },
 
     plugins: {
@@ -42,6 +46,7 @@ export default defineConfig([
     },
 
     rules: {
+      "no-undef": "off",
       "no-var": "error",
       "prefer-const": "error",
 
@@ -82,6 +87,7 @@ export default defineConfig([
         ...globals.node,
         window: "readonly",
         navigator: "readonly",
+        document: "readonly",
       },
     },
 
@@ -107,9 +113,13 @@ export default defineConfig([
   },
 
   {
-    files: ["src/content.config.ts"],
+    files: ["**/*.astro/*.js", "**/*.astro/*.ts"],
+    languageOptions: {
+      globals: { ...globals.browser },
+    },
+
     rules: {
-      "import/no-unresolved": "off",
+      "no-undef": "error",
     },
   },
 ])

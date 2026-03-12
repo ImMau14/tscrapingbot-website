@@ -1,47 +1,69 @@
 import { defineMiddleware } from "astro:middleware"
+import { locales, defaultLocale } from "@i18n/utils"
 
-export const onRequest = defineMiddleware(async (_, next) => {
-  const response = await next()
+export const onRequest = defineMiddleware(async (context, next) => {
+  const url = new URL(context.request.url)
+  const pathname = url.pathname
 
-  const contentType = response.headers.get("content-type") || ""
-  if (!contentType.includes("text/html")) return response
-
-  const isDev = import.meta.env.DEV
-
-  const cspDirectives = [
-    "default-src 'self'",
-    "img-src 'self' https://img.shields.io data: blob:",
-    "script-src 'self'",
-    "style-src 'self'",
-    "font-src 'self' data:",
-    "connect-src 'self'",
-    "manifest-src 'self'",
-    "base-uri 'self'",
-    "form-action 'self'",
-    "frame-ancestors 'none'",
-    "upgrade-insecure-requests",
-  ]
-
-  if (isDev) {
-    const devCsp = [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
-      "style-src 'self' 'unsafe-inline'",
-      "connect-src 'self' ws: localhost:*",
-      "upgrade-insecure-requests",
-    ]
-    response.headers.set("Content-Security-Policy", devCsp.join("; "))
-  } else {
-    response.headers.set("Content-Security-Policy", cspDirectives.join("; "))
+  if (
+    /\.[^/.]+$/.test(pathname) ||
+    pathname.startsWith("/_astro/") ||
+    pathname.startsWith("/_actions") ||
+    pathname.startsWith("/api/")
+  ) {
+    return next()
   }
 
-  response.headers.set("X-Robots-Tag", "index, follow")
+  const segments = pathname.split("/").filter(Boolean)
+  const firstSegment = segments[0]
+  const hasLocale = locales.includes(firstSegment)
 
-  response.headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
-  response.headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
-  response.headers.set("X-Content-Type-Options", "nosniff")
-  response.headers.set("X-Frame-Options", "DENY")
-  response.headers.set("Permissions-Policy", "camera=(), microphone=(), geolocation=(), interest-cohort=()")
+  if (!hasLocale) {
+    const acceptLanguage = context.request.headers.get("accept-language") || ""
+    let userLang = defaultLocale
 
-  return response
+    const primaryLang = acceptLanguage.split(",")[0]?.split("-")[0] || ""
+    if (locales.includes(primaryLang)) {
+      userLang = primaryLang
+    }
+
+    const redirectPath = `/${userLang}${pathname === "/" ? "" : pathname}`
+    return context.redirect(redirectPath, 302)
+  }
+
+  if (import.meta.env.PROD) {
+    const response = await next()
+    const contentType = response.headers.get("content-type") || ""
+    if (contentType.includes("text/html")) {
+      const clone = response.clone()
+      const headers = new Headers(clone.headers)
+
+      const csp = [
+        "default-src 'self'",
+        "img-src 'self' https: data: blob:",
+        "script-src 'self'",
+        "style-src 'self' 'unsafe-hashes' 'sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU='",
+        "font-src 'self' data:",
+        "connect-src 'self'",
+        "frame-ancestors 'none'",
+        "upgrade-insecure-requests",
+      ].join("; ")
+
+      headers.set("Content-Security-Policy", csp)
+      headers.set("X-Frame-Options", "DENY")
+      headers.set("X-Content-Type-Options", "nosniff")
+      headers.set("Referrer-Policy", "strict-origin-when-cross-origin")
+      headers.set("Strict-Transport-Security", "max-age=31536000; includeSubDomains; preload")
+      headers.set("Cross-Origin-Resource-Policy", "same-origin")
+
+      return new Response(clone.body, {
+        status: clone.status,
+        statusText: clone.statusText,
+        headers,
+      })
+    }
+    return response
+  }
+
+  return next()
 })

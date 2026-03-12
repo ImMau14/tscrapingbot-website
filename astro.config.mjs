@@ -24,7 +24,18 @@ export default defineConfig({
     ssr: {
       noExternal: ["@tailwindcss/vite"],
     },
+
+    build: {
+      assetsInlineLimit: 0,
+    },
   },
+
+  build: {
+    inlineStylesheets: "never",
+    assetsPrefix: "/",
+  },
+
+  trailingSlash: "never",
 
   output: "server",
   adapter: vercel({
