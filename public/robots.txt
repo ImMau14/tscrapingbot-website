@@ -1,0 +1,4 @@
+User-agent: *
+Disallow:
+
+Sitemap: https://tscrapingbot-web.vercel.app/sitemap.xml
