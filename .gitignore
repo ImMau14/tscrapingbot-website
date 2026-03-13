@@ -3,6 +3,7 @@ dist/
 # generated types
 .astro/
 .vercel/
+.eslintcache
 
 # dependencies
 node_modules/

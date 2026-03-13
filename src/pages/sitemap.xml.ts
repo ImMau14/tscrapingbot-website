@@ -14,7 +14,7 @@ export const GET: APIRoute = async () => {
   const host = process.env.VERCEL_PROJECT_PRODUCTION_URL || process.env.VERCEL_URL || "localhost:4321"
 
   const protocol = host.includes("localhost") ? "http" : "https"
-  const siteUrl = `${protocol}://${host}`
+  const siteUrl = `${protocol}://${host}`.replace(/\/$/, "")
 
   const pages = import.meta.glob("./**/*.{astro,md,mdx}")
 
@@ -26,6 +26,7 @@ export const GET: APIRoute = async () => {
       .replace(/\.[^/.]+$/, "")
       .replace(/\/index$/, "")
     if (route === "") route = "/"
+
     if (route.includes("[")) {
       for (const lang of locales) {
         const localized = route.replace(/\[.*?lang.*?\]/, lang).replace(/\/+/g, "/")
@@ -56,38 +57,33 @@ export const GET: APIRoute = async () => {
       const localizedRoutes = Array.from(localizedSet).sort()
       const isHome = base === "/"
       const priority = isHome ? "1.0" : "0.8"
-      const loc = `${siteUrl}${localizedRoutes[0]}`
+
+      const mainRoute = localizedRoutes.find((r) => r.startsWith(`/${defaultLocale}`)) || localizedRoutes[0]
+      const loc = `${siteUrl}${mainRoute}`
 
       const alternates = localizedRoutes
         .map((route) => {
           const lang = route.split("/")[1] ?? defaultLocale
-          return `<xhtml:link rel="alternate" hreflang="${escapeXml(lang)}" href="${escapeXml(
-            `${siteUrl}${route}`,
-          )}" />`
+          return `    <xhtml:link rel="alternate" hreflang="${escapeXml(lang)}" href="${escapeXml(`${siteUrl}${route}`)}" />`
         })
-        .join("\n    ")
+        .join("\n")
 
-      const xDefault = `<xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(
-        `${siteUrl}/${defaultLocale}`,
-      )}" />`
+      const xDefaultRoute = base === "/" ? `/${defaultLocale}` : `/${defaultLocale}${base}`
+      const xDefault = `    <xhtml:link rel="alternate" hreflang="x-default" href="${escapeXml(`${siteUrl}${xDefaultRoute}`)}" />`
 
-      return `
-  <url>
+      return `  <url>
     <loc>${escapeXml(loc)}</loc>
-    ${alternates}
-    ${xDefault}
+${alternates}
+${xDefault}
     <lastmod>${lastmod}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>`
     })
-    .join("")
+    .join("\n")
 
   const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
-<urlset
- xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
- xmlns:xhtml="http://www.w3.org/1999/xhtml"
- xmlns:xml="http://www.w3.org/XML/1998/namespace">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
 ${urls}
 </urlset>`
 
